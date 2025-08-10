@@ -1,19 +1,488 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello, World!</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="container">
-    <h1 id="helloText">Hello, World!</h1>
-    <button onclick="launchConfetti()">Celebrate 🎉</button>
-  </div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrick & Vanessa - Our Love Story 💕</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        coral: '#FF7F7F',
+                        rosegold: '#E8B4B8',
+                        romantic: '#FF6B8A',
+                        blush: '#FFB3BA',
+                        sunset: '#FF8C94'
+                    },
+                    fontFamily: {
+                        'dancing': ['Dancing Script', 'cursive'],
+                        'poppins': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-25px) rotate(8deg); }
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1) rotate(180deg); }
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .float { animation: float 4s ease-in-out infinite; }
+        .heartbeat { animation: heartbeat 2.5s ease-in-out infinite; }
+        .fade-in-up { animation: fadeInUp 1.2s ease-out; }
+        .sparkle { animation: sparkle 3s ease-in-out infinite; }
+        .slide-in { animation: slideIn 0.5s ease-out; }
+        
+        .love-gradient {
+            background: linear-gradient(135deg, #FF7F7F, #FF6B8A, #E8B4B8, #FFB3BA);
+            background-size: 400% 400%;
+            animation: gradientShift 4s ease infinite;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #FF6B8A, #FF7F7F, #E8B4B8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .photo-frame {
+            background: linear-gradient(45deg, #FF7F7F, #FF6B8A, #E8B4B8, #FFB3BA);
+            padding: 6px;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(255, 107, 138, 0.4);
+        }
+        
+        .heart {
+            width: 20px;
+            height: 18px;
+            position: relative;
+        }
+        .heart:before,
+        .heart:after {
+            content: '';
+            width: 12px;
+            height: 19px;
+            position: absolute;
+            left: 10px;
+            transform: rotate(-45deg);
+            background: #FF6B8A;
+            border-radius: 10px 10px 0 0;
+        }
+        .heart:after {
+            left: 0;
+            transform: rotate(45deg);
+        }
 
-  <canvas id="confettiCanvas"></canvas>
-  
-  <script src="script.js"></script>
+        .modal-backdrop {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-rose-50 via-pink-50 to-orange-50 dark:from-gray-900 dark:via-rose-900 dark:to-pink-900 font-poppins overflow-x-hidden">
+    
+    <!-- Relationship Status Modal -->
+    <div id="relationshipModal" class="fixed inset-0 modal-backdrop flex items-center justify-center z-50">
+        <div class="slide-in bg-white dark:bg-gray-800 rounded-3xl p-8 max-w-md mx-4 text-center shadow-2xl">
+            <div class="text-6xl mb-4 heartbeat">💔</div>
+            <h2 class="text-2xl font-dancing font-bold text-romantic dark:text-pink-400 mb-4">
+                Hold Up! Relationship Check 💕
+            </h2>
+            <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                This website is for couples only! If you're single, please respect our love space and come back when you find your special someone. 
+            </p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">
+                Are you currently in a relationship?
+            </p>
+            <div class="space-y-4">
+                <button id="singleBtn" class="w-full bg-gray-500 hover:bg-gray-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300">
+                    😢 I'm Single (Take me away)
+                </button>
+                <button id="coupledBtn" class="w-full love-gradient text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105">
+                    💕 I'm in Love (Let me in!)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Single People Redirect Modal -->
+    <div id="singleModal" class="hidden fixed inset-0 modal-backdrop flex items-center justify-center z-50">
+        <div class="slide-in bg-white dark:bg-gray-800 rounded-3xl p-8 max-w-md mx-4 text-center shadow-2xl">
+            <div class="text-6xl mb-4">😢</div>
+            <h2 class="text-2xl font-dancing font-bold text-gray-600 dark:text-gray-400 mb-4">
+                Sorry Single Friend!
+            </h2>
+            <p class="text-gray-700 dark:text-gray-300 mb-6">
+                This love zone is for couples only. Go find your person first, then come back to celebrate love with us! 
+            </p>
+            <button id="redirectBtn" class="love-gradient text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105">
+                Take me to dating tips 💘
+            </button>
+        </div>
+    </div>
+
+    <!-- Floating Hearts and Sparkles -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="heart absolute top-20 left-10 float opacity-25" style="animation-delay: 0s;"></div>
+        <div class="heart absolute top-40 right-20 float opacity-30" style="animation-delay: 1s;"></div>
+        <div class="heart absolute bottom-32 left-20 float opacity-35" style="animation-delay: 2s;"></div>
+        <div class="heart absolute bottom-20 right-10 float opacity-25" style="animation-delay: 0.5s;"></div>
+        <div class="heart absolute top-60 left-1/2 float opacity-20" style="animation-delay: 1.5s;"></div>
+        
+        <!-- Sparkles -->
+        <div class="absolute top-1/4 left-1/4 w-3 h-3 bg-yellow-400 rounded-full sparkle" style="animation-delay: 0s;"></div>
+        <div class="absolute top-3/4 right-1/4 w-2 h-2 bg-pink-400 rounded-full sparkle" style="animation-delay: 1s;"></div>
+        <div class="absolute top-1/2 right-1/3 w-2.5 h-2.5 bg-orange-400 rounded-full sparkle" style="animation-delay: 2s;"></div>
+        <div class="absolute bottom-1/4 left-1/3 w-2 h-2 bg-rose-400 rounded-full sparkle" style="animation-delay: 1.5s;"></div>
+    </div>
+
+    <div id="mainContent" class="hidden relative z-10">
+        <!-- Header -->
+        <header class="text-center pt-8 pb-6 fade-in-up">
+            <div class="heartbeat inline-block text-7xl mb-4">💖</div>
+            <h1 class="text-6xl md:text-8xl font-dancing font-bold text-gradient mb-3">
+                Patrick & Vanessa
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-light">
+                Couple Goals Since Day One 👑💕
+            </p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="container mx-auto px-4 py-8 max-w-6xl">
+            
+            <!-- Hero Section with Main Photo -->
+            <section class="text-center mb-16 fade-in-up" style="animation-delay: 0.2s;">
+                <div class="relative inline-block mb-8">
+                    <div class="photo-frame">
+                        <img src="https://pfst.cf2.poecdn.net/base/image/6acd3dbe7f20d59c5ca5c3f053d790216a64d19487dfa9197f8922eb04cd98a3?w=3840&h=5376" 
+                             alt="Patrick and Vanessa together" 
+                             class="w-80 h-80 md:w-96 md:h-96 object-cover rounded-2xl">
+                    </div>
+                    <div class="absolute -top-6 -right-6 text-6xl heartbeat">💕</div>
+                    <div class="absolute -bottom-6 -left-6 text-5xl heartbeat" style="animation-delay: 1s;">❤️</div>
+                    <div class="absolute top-1/2 -left-8 text-4xl heartbeat" style="animation-delay: 2s;">💖</div>
+                    <div class="absolute top-1/4 -right-8 text-3xl heartbeat" style="animation-delay: 1.5s;">💘</div>
+                </div>
+                
+                <h2 class="text-4xl md:text-6xl font-dancing font-semibold text-romantic dark:text-pink-400 mb-6">
+                    Look at Us Being All Cute! 😍
+                </h2>
+                <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                    Vanessa baby, this is us! Look how perfect we are together! Every day with you feels like I'm winning the lottery. 
+                    You're not just my girlfriend, you're my whole world, my peace, my happiness, my everything! 💕
+                </p>
+            </section>
+
+            <!-- Photo Gallery -->
+            <section class="mb-16 fade-in-up" style="animation-delay: 0.4s;">
+                <h3 class="text-4xl md:text-5xl font-dancing text-center text-romantic dark:text-pink-400 mb-8">
+                    Your Man Looking Good For You 😘
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="photo-frame hover:scale-110 transition-transform duration-300 hover:rotate-2">
+                        <img src="https://pfst.cf2.poecdn.net/base/image/6acaeffe2439d7963454e94c809cc55dd83dbd812f817356f17f484edf3ee36f?w=1080&h=1920" 
+                             alt="Patrick" 
+                             class="w-full h-64 object-cover rounded-2xl">
+                    </div>
+                    <div class="photo-frame hover:scale-110 transition-transform duration-300 hover:-rotate-2">
+                        <img src="https://pfst.cf2.poecdn.net/base/image/d3e24ebfa4a984aac8b7e0b9218444935a6e2d3b999860681060307a638f8720?w=1440&h=1440" 
+                             alt="Patrick in jersey" 
+                             class="w-full h-64 object-cover rounded-2xl">
+                    </div>
+                    <div class="photo-frame hover:scale-110 transition-transform duration-300 hover:rotate-1">
+                        <img src="https://pfst.cf2.poecdn.net/base/image/0158cf4b693d80346b862537b9f5b17278deaff66f1da05ab2f44d283810600a?w=4000&h=3000" 
+                             alt="Patrick relaxing" 
+                             class="w-full h-64 object-cover rounded-2xl">
+                    </div>
+                    <div class="photo-frame hover:scale-110 transition-transform duration-300 hover:-rotate-1">
+                        <img src="https://pfst.cf2.poecdn.net/base/image/ef5024ffec8782c9b5c1d00290dd795116416af35405ffe6a5f45aa9ea2ae9da?w=1080&h=1440" 
+                             alt="Patrick portrait" 
+                             class="w-full h-64 object-cover rounded-2xl">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Love Messages -->
+            <section class="grid md:grid-cols-2 gap-8 mb-16">
+                <div class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border-2 border-coral/20 fade-in-up" style="animation-delay: 0.6s;">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-3 heartbeat">🌹</div>
+                        <h3 class="text-3xl font-dancing font-semibold text-romantic dark:text-pink-400">Why You're Perfect</h3>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
+                        Babe, you're literally everything I ever wanted in a woman. You're smart, funny, beautiful inside and out. 
+                        You understand my weird jokes, you support my dreams, and you love me even when I'm being annoying. That's real love right there!
+                    </p>
+                </div>
+
+                <div class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border-2 border-rosegold/20 fade-in-up" style="animation-delay: 0.8s;">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-3 heartbeat">💫</div>
+                        <h3 class="text-3xl font-dancing font-semibold text-romantic dark:text-pink-400">You Complete Me</h3>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
+                        I'm not even lying when I say you made me a better person. Before you, I didn't know what it meant to really care about someone. 
+                        Now I wake up every day thinking about how to make you smile. You're my motivation, my inspiration, my everything.
+                    </p>
+                </div>
+
+                <div class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border-2 border-blush/20 fade-in-up" style="animation-delay: 1s;">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-3 heartbeat">🎵</div>
+                        <h3 class="text-3xl font-dancing font-semibold text-romantic dark:text-pink-400">Our Love Story</h3>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
+                        We just click so perfectly together, you know? Like we can talk about anything for hours, or we can just chill in comfortable silence. 
+                        We laugh at the same things, we want the same things in life. It's like we were made for each other.
+                    </p>
+                </div>
+
+                <div class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border-2 border-sunset/20 fade-in-up" style="animation-delay: 1.2s;">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-3 heartbeat">🌟</div>
+                        <h3 class="text-3xl font-dancing font-semibold text-romantic dark:text-pink-400">Forever Together</h3>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
+                        I'm not playing games with you babe. I see us growing old together, traveling the world, building a beautiful life. 
+                        You're not just my present, you're my future. I want to give you everything you deserve and more.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Special Message Section -->
+            <section class="text-center mb-16 fade-in-up" style="animation-delay: 1.4s;">
+                <div class="love-gradient rounded-3xl p-2 max-w-4xl mx-auto">
+                    <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 md:p-12">
+                        <h3 class="text-4xl md:text-5xl font-dancing font-bold text-romantic dark:text-pink-400 mb-6">
+                            Vanessa, This is For You Baby 💕
+                        </h3>
+                        <div class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed space-y-6">
+                            <p>
+                                I built this whole website just to show the world how crazy I am about you. 
+                                People need to see what real love looks like, and we're the perfect example!
+                            </p>
+                            <p>
+                                You changed everything for me baby. You made me believe in forever, in soulmates, in true love. 
+                                When people ask me what happiness looks like, I just show them a picture of you.
+                            </p>
+                            <p class="text-3xl font-dancing text-romantic dark:text-pink-400 font-semibold">
+                                I love you more than words can say 💖
+                            </p>
+                            <p>
+                                Thank you for choosing me every single day, for loving me through my flaws, and for being the most amazing woman in the world. 
+                                You're stuck with me forever now! 😘
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Love Button -->
+            <section class="text-center mb-16 fade-in-up" style="animation-delay: 1.6s;">
+                <button id="loveButton" class="love-gradient text-white px-20 py-6 rounded-full text-2xl font-bold shadow-2xl transform transition-all duration-300 hover:scale-115 hover:shadow-3xl mb-8">
+                    💕 Click for Love Magic 💕
+                </button>
+                <div id="surpriseMessage" class="hidden">
+                    <div class="love-gradient rounded-3xl p-2 max-w-2xl mx-auto">
+                        <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 text-center">
+                            <div class="text-8xl mb-6 heartbeat">💖</div>
+                            <p class="text-3xl font-dancing text-romantic dark:text-pink-400 mb-6">
+                                SURPRISE BABY! 🎉✨
+                            </p>
+                            <p class="text-xl text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                                Every time you smile, angels get jealous! You're so beautiful it should be illegal. 
+                                I thank God every day for bringing you into my life. You're my miracle, my blessing, my everything! 
+                            </p>
+                            <p class="text-2xl font-dancing text-romantic dark:text-pink-400 mb-4">
+                                I LOVE YOU SO MUCH VANESSA! 💕✨💖
+                            </p>
+                            <p class="text-lg font-semibold text-gray-600 dark:text-gray-400">
+                                - Your crazy-in-love Patrick 😍💍
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="text-center py-8 fade-in-up" style="animation-delay: 1.8s;">
+                <div class="flex justify-center items-center space-x-4 text-4xl mb-6">
+                    <span class="heartbeat">💖</span>
+                    <span class="text-2xl font-dancing text-gray-600 dark:text-gray-400">Handcrafted with infinite love by Patrick</span>
+                    <span class="heartbeat" style="animation-delay: 1s;">💖</span>
+                </div>
+                <p class="text-lg text-gray-500 dark:text-gray-400 mb-4">
+                    For my beautiful queen Vanessa • Forever and Always • 2024
+                </p>
+                <div class="text-3xl space-x-3">
+                    <span class="heartbeat">💕</span>
+                    <span class="heartbeat" style="animation-delay: 0.5s;">❤️</span>
+                    <span class="heartbeat" style="animation-delay: 1s;">💖</span>
+                    <span class="heartbeat" style="animation-delay: 1.5s;">💘</span>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Relationship Status Modal Logic
+        const relationshipModal = document.getElementById('relationshipModal');
+        const singleModal = document.getElementById('singleModal');
+        const mainContent = document.getElementById('mainContent');
+        
+        document.getElementById('singleBtn').addEventListener('click', function() {
+            relationshipModal.classList.add('hidden');
+            singleModal.classList.remove('hidden');
+        });
+
+        document.getElementById('coupledBtn').addEventListener('click', function() {
+            relationshipModal.classList.add('hidden');
+            mainContent.classList.remove('hidden');
+            createWelcomeHearts();
+        });
+
+        document.getElementById('redirectBtn').addEventListener('click', function() {
+            window.open('https://www.google.com/search?q=how+to+find+love+dating+tips', '_blank');
+        });
+
+        // Create welcome hearts when entering the site
+        function createWelcomeHearts() {
+            const hearts = ['💕', '💖', '💗', '💘', '❤️', '💝', '💓'];
+            
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                    heart.className = 'fixed text-4xl pointer-events-none z-50';
+                    heart.style.left = Math.random() * window.innerWidth + 'px';
+                    heart.style.top = window.innerHeight + 'px';
+                    heart.style.animation = 'float 5s ease-out forwards';
+                    
+                    document.body.appendChild(heart);
+                    
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 5000);
+                }, i * 100);
+            }
+        }
+
+        // Love button interaction
+        document.getElementById('loveButton').addEventListener('click', function() {
+            const message = document.getElementById('surpriseMessage');
+            const button = this;
+            
+            if (message.classList.contains('hidden')) {
+                message.classList.remove('hidden');
+                message.style.animation = 'fadeInUp 1.2s ease-out';
+                button.textContent = '💖 You Found My Heart! 💖';
+                button.classList.add('scale-125');
+                
+                // Create magical love explosion
+                createLoveExplosion();
+            } else {
+                message.classList.add('hidden');
+                button.textContent = '💕 Click for Love Magic 💕';
+                button.classList.remove('scale-125');
+            }
+        });
+
+        // Create love explosion effect
+        function createLoveExplosion() {
+            const hearts = ['💕', '💖', '💗', '💘', '❤️', '💝', '💓', '😍', '🥰', '😘'];
+            
+            for (let i = 0; i < 25; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                    heart.className = 'fixed text-3xl pointer-events-none z-50';
+                    heart.style.left = Math.random() * window.innerWidth + 'px';
+                    heart.style.top = Math.random() * window.innerHeight + 'px';
+                    heart.style.animation = 'float 4s ease-out forwards';
+                    
+                    document.body.appendChild(heart);
+                    
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 4000);
+                }, i * 80);
+            }
+        }
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for scroll animations
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Add random sparkle effects
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'fixed w-3 h-3 bg-gradient-to-r from-yellow-400 to-pink-400 rounded-full sparkle pointer-events-none z-10';
+            sparkle.style.left = Math.random() * window.innerWidth + 'px';
+            sparkle.style.top = Math.random() * window.innerHeight + 'px';
+            
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 3000);
+        }
+
+        // Create sparkles every 2 seconds
+        setInterval(createSparkle, 2000);
+    </script>
 </body>
 </html>
