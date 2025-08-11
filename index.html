@@ -1,1 +1,814 @@
- I LOVE YABBY
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrick & Vanessa - Vanessa's Love Universe 💕</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Dancing+Script:wght@400;500;600;700&family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pinkLight: '#FFB6C1',
+                        pinkMedium: '#FF69B4',
+                        pinkDeep: '#FF1493',
+                        pinkDark: '#C71585',
+                        roseGold: '#E8B4A6',
+                        coral: '#FF7F7F',
+                        lavender: '#E6E6FA',
+                        peach: '#FFCCCB',
+                        magenta: '#FF00FF',
+                        fuchsia: '#FF20DD'
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'dancing': ['Dancing Script', 'cursive'],
+                        'comfortaa': ['Comfortaa', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.08); opacity: 0.9; }
+        }
+        @keyframes vanessaWave {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 100% 50%; }
+            50% { background-position: 50% 100%; }
+            75% { background-position: 0% 50%; }
+            100% { background-position: 50% 0%; }
+        }
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1) rotate(180deg); }
+        }
+        
+        .float { animation: float 5s ease-in-out infinite; }
+        .bounce { animation: bounce 2s ease-in-out infinite; }
+        .fade-in-up { animation: fadeInUp 1.3s ease-out; }
+        .slide-in { animation: slideIn 0.7s ease-out; }
+        .pulse-love { animation: pulse 3s ease-in-out infinite; }
+        .sparkle { animation: sparkle 3s ease-in-out infinite; }
+        
+        body {
+            background: linear-gradient(135deg, #FFB6C1 0%, #FF69B4 25%, #FF1493 50%, #FF69B4 75%, #FFB6C1 100%);
+            background-size: 400% 400%;
+            animation: vanessaWave 12s ease infinite;
+            min-height: 100vh;
+        }
+        
+        .dark body {
+            background: linear-gradient(135deg, #8B1538 0%, #A0153E 25%, #C71585 50%, #8B1538 75%, #A0153E 100%);
+            background-size: 400% 400%;
+            animation: vanessaWave 12s ease infinite;
+        }
+        
+        .vanessa-gradient {
+            background: linear-gradient(135deg, #FF69B4, #FF1493, #FFB6C1, #FF69B4);
+            background-size: 400% 400%;
+            animation: vanessaWave 8s ease infinite;
+        }
+        
+        .text-gradient-vanessa {
+            background: linear-gradient(135deg, #FF1493, #FF69B4, #FFB6C1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% 200%;
+            animation: vanessaWave 6s ease infinite;
+        }
+        
+        .glass-vanessa {
+            background: rgba(255, 182, 193, 0.2);
+            backdrop-filter: blur(25px);
+            border: 2px solid rgba(255, 105, 180, 0.3);
+            box-shadow: 
+                0 25px 50px rgba(255, 20, 147, 0.2),
+                0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+        }
+        
+        .dark .glass-vanessa {
+            background: rgba(139, 21, 56, 0.4);
+            border: 2px solid rgba(255, 105, 180, 0.4);
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 105, 180, 0.2) inset;
+        }
+        
+        .image-container {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 25px;
+            position: relative;
+        }
+        
+        .main-image-container {
+            width: 450px;
+            height: 450px;
+            overflow: hidden;
+            border-radius: 30px;
+            position: relative;
+        }
+        
+        .image-fit {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.5s ease;
+        }
+        
+        .image-fit:hover {
+            transform: scale(1.05);
+        }
+        
+        .vanessa-frame {
+            background: linear-gradient(45deg, #FF69B4, #FF1493, #FFB6C1, #FF69B4);
+            padding: 6px;
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(255, 105, 180, 0.5);
+        }
+        
+        .main-vanessa-frame {
+            background: linear-gradient(45deg, #FF69B4, #FF1493, #FFB6C1, #FF69B4);
+            padding: 8px;
+            border-radius: 35px;
+            box-shadow: 0 40px 80px rgba(255, 20, 147, 0.6);
+        }
+        
+        .music-controls {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 1000;
+            background: rgba(255, 182, 193, 0.25);
+            backdrop-filter: blur(20px);
+            border-radius: 60px;
+            padding: 15px 25px;
+            box-shadow: 0 20px 40px rgba(255, 105, 180, 0.4);
+            border: 2px solid rgba(255, 105, 180, 0.3);
+        }
+        
+        .modal-backdrop {
+            background: rgba(255, 20, 147, 0.3);
+            backdrop-filter: blur(20px);
+        }
+        
+        .heading-main {
+            font-size: clamp(3rem, 8vw, 6.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+        }
+        
+        .heading-secondary {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .text-body {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            line-height: 1.8;
+            font-weight: 500;
+        }
+        
+        .text-elegant {
+            color: #4A1A2C;
+            text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+        }
+        
+        .dark .text-elegant {
+            color: #FFE4E1;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+        
+        .heart {
+            width: 24px;
+            height: 22px;
+            position: relative;
+        }
+        .heart:before,
+        .heart:after {
+            content: '';
+            width: 14px;
+            height: 22px;
+            position: absolute;
+            left: 12px;
+            transform: rotate(-45deg);
+            background: #FF1493;
+            border-radius: 12px 12px 0 0;
+        }
+        .heart:after {
+            left: 0;
+            transform: rotate(45deg);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 768px) {
+            .main-image-container {
+                width: 350px;
+                height: 350px;
+            }
+            .image-container {
+                height: 320px;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        
+        .audio-visualizer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+        
+        .audio-bar {
+            width: 4px;
+            height: 25px;
+            background: linear-gradient(to top, #FF1493, #FF69B4, #FFB6C1);
+            border-radius: 3px;
+            animation: audioWave 1.5s ease-in-out infinite;
+        }
+        
+        .audio-bar:nth-child(2) { animation-delay: 0.1s; }
+        .audio-bar:nth-child(3) { animation-delay: 0.2s; }
+        .audio-bar:nth-child(4) { animation-delay: 0.3s; }
+        .audio-bar:nth-child(5) { animation-delay: 0.4s; }
+        
+        @keyframes audioWave {
+            0%, 100% { height: 25px; }
+            50% { height: 8px; }
+        }
+        
+        .love-quote {
+            position: relative;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .love-quote:before {
+            content: '"';
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 4rem;
+            color: #FF69B4;
+            font-family: 'Dancing Script', cursive;
+            line-height: 1;
+        }
+        
+        .love-quote:after {
+            content: '"';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font-size: 4rem;
+            color: #FF69B4;
+            font-family: 'Dancing Script', cursive;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="min-h-screen font-poppins overflow-x-hidden">
+    
+    <!-- Background Audio -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://pfst.cf2.poecdn.net/base/audio/b3aa260df77a4a18fc03f6dce76ec4629967ed24c677e9ec6599cb66d873429c" type="audio/mpeg">
+    </audio>
+
+    <!-- Music Controls -->
+    <div id="musicControls" class="music-controls">
+        <div class="flex items-center space-x-4">
+            <button id="playPauseBtn" class="w-14 h-14 rounded-full vanessa-gradient flex items-center justify-center text-white text-xl hover:scale-110 transition-transform shadow-lg">
+                <span id="playIcon">▶️</span>
+            </button>
+            <div class="audio-visualizer" id="audioVisualizer" style="display: none;">
+                <div class="audio-bar"></div>
+                <div class="audio-bar"></div>
+                <div class="audio-bar"></div>
+                <div class="audio-bar"></div>
+                <div class="audio-bar"></div>
+            </div>
+            <span class="text-sm font-bold text-white">🎵 Our Love Song 💕</span>
+        </div>
+    </div>
+
+    <!-- Love Entry Modal -->
+    <div id="loveModal" class="fixed inset-0 modal-backdrop flex items-center justify-center z-50">
+        <div class="slide-in glass-vanessa rounded-3xl p-10 max-w-lg mx-4 text-center">
+            <div class="text-8xl mb-8 bounce">💕</div>
+            <h2 class="text-4xl font-dancing font-bold text-gradient-vanessa mb-8">
+                Welcome to Vanessa's Paradise
+            </h2>
+            <p class="text-elegant text-body mb-10 leading-relaxed font-medium">
+                This is our sacred space where love blooms in endless shades of beauty! 
+                Enter only if your heart believes in fairytale romance and eternal devotion. 💖
+            </p>
+            <div class="space-y-5">
+                <button id="enterBtn" class="w-full vanessa-gradient text-white px-10 py-5 rounded-full font-bold transition-all duration-300 hover:scale-105 pulse-love text-xl shadow-2xl">
+                    💖 Enter Vanessa's Love World 💖
+                </button>
+                <button id="exitBtn" class="w-full bg-gradient-to-r from-gray-400 to-gray-500 hover:from-gray-500 hover:to-gray-600 text-white px-10 py-4 rounded-full font-semibold transition-all duration-300 text-lg">
+                    💔 Not Ready for True Love
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Hearts and Elements -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="heart absolute top-16 left-8 float opacity-20" style="animation-delay: 0s;"></div>
+        <div class="heart absolute top-32 right-16 float opacity-25" style="animation-delay: 1s;"></div>
+        <div class="heart absolute bottom-24 left-16 float opacity-30" style="animation-delay: 2s;"></div>
+        <div class="heart absolute bottom-16 right-8 float opacity-20" style="animation-delay: 0.5s;"></div>
+        
+        <!-- Beautiful Elements -->
+        <div class="absolute top-1/4 left-1/4 w-4 h-4 bg-pinkMedium rounded-full sparkle" style="animation-delay: 0s;"></div>
+        <div class="absolute top-3/4 right-1/4 w-5 h-5 bg-pinkDeep rounded-full sparkle" style="animation-delay: 1s;"></div>
+        <div class="absolute top-1/2 right-1/3 w-4 h-4 bg-coral rounded-full sparkle" style="animation-delay: 2s;"></div>
+        <div class="absolute bottom-1/4 left-1/3 w-4 h-4 bg-fuchsia rounded-full sparkle" style="animation-delay: 1.5s;"></div>
+    </div>
+
+    <div id="mainContent" class="hidden relative z-10">
+        <!-- Header -->
+        <header class="text-center pt-16 pb-12 fade-in-up">
+            <div class="bounce inline-block text-9xl mb-8">💖</div>
+            <h1 class="heading-main font-dancing text-gradient-vanessa mb-6">
+                Patrick & Vanessa
+            </h1>
+            <div class="text-3xl md:text-4xl text-elegant font-comfortaa font-bold mb-4">
+                ✨ Vanessa's Love Universe ✨
+            </div>
+            <p class="text-2xl md:text-3xl text-elegant font-dancing font-semibold">
+                Two Hearts, One Beautiful Paradise 💕
+                <br>NDAGUKUNDA 💖 Vanessa My Yabby ❤
+            </p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="container mx-auto px-6 py-10 max-w-7xl">
+            
+            <!-- Hero Section -->
+            <section class="text-center mb-24 fade-in-up" style="animation-delay: 0.3s;">
+                <div class="relative inline-block mb-12">
+                    <div class="main-vanessa-frame pulse-love">
+                        <div class="main-image-container mx-auto">
+                            <img src="https://i.ibb.co/21d2Hz1Y/Whats-App-Image-2025-08-11-at-10-27-51-removebg-preview.png" 
+                                 alt="Patrick and Vanessa - Dreams Become Reality" 
+                                 class="image-fit">
+                        </div>
+                    </div>
+                    <div class="absolute -top-10 -right-10 text-8xl bounce">🌸</div>
+                    <div class="absolute -bottom-10 -left-10 text-7xl bounce" style="animation-delay: 1s;">💫</div>
+                    <div class="absolute top-1/2 -left-12 text-6xl bounce" style="animation-delay: 2s;">💖</div>
+                    <div class="absolute top-1/4 -right-12 text-5xl bounce" style="animation-delay: 1.5s;">🌺</div>
+                </div>
+                
+                <h2 class="heading-secondary font-dancing text-gradient-vanessa mb-10">
+                    When Dreams Become Reality ✨
+                </h2>
+                <div class="max-w-5xl mx-auto glass-vanessa rounded-3xl p-10">
+                    <div class="love-quote">
+                        <p class="text-body text-elegant leading-relaxed font-comfortaa font-medium text-center">
+                            My dearest Vanessa, my beautiful yabby, you are the colorful sunrise that paints my world with endless beauty! 
+                            Every moment with you feels like floating through a cotton candy cloud of pure love and magic. 
+                            You transformed my black and white world into the most magnificent paradise imaginable! 💕✨
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Photo Gallery -->
+            <section class="mb-24 fade-in-up" style="animation-delay: 0.6s;">
+                <h3 class="heading-secondary font-dancing text-center text-gradient-vanessa mb-16">
+                    My Beautiful Paradise King 👑💖
+                </h3>
+                <div class="gallery-grid">
+                    <div class="fade-in-up" style="animation-delay: 0.8s;">
+                        <div class="vanessa-frame hover:scale-105 transition-transform duration-500 hover:rotate-2">
+                            <div class="image-container">
+                                <img src="https://i.ibb.co/0VFg1F7T/IMG1-1.jpg" 
+                                     alt="My Handsome Patrick" 
+                                     class="image-fit">
+                            </div>
+                        </div>
+                        <div class="text-center mt-6">
+                            <h4 class="text-3xl font-dancing text-gradient-vanessa font-bold mb-2">My Handsome King</h4>
+                            <p class="text-elegant font-comfortaa font-medium">The man who stole my heart completely 👑</p>
+                        </div>
+                    </div>
+
+                    <div class="fade-in-up" style="animation-delay: 1s;">
+                        <div class="vanessa-frame hover:scale-105 transition-transform duration-500 hover:-rotate-2">
+                            <div class="image-container">
+                                <img src="https://i.ibb.co/sdcHGmJk/IMG1-2.jpg" 
+                                     alt="Patrick's Style" 
+                                     class="image-fit">
+                            </div>
+                        </div>
+                        <div class="text-center mt-6">
+                            <h4 class="text-3xl font-dancing text-gradient-vanessa font-bold mb-2">My Stylish Prince</h4>
+                            <p class="text-elegant font-comfortaa font-medium">Effortlessly charming in every way 💫</p>
+                        </div>
+                    </div>
+
+                    <div class="fade-in-up" style="animation-delay: 1.2s;">
+                        <div class="vanessa-frame hover:scale-105 transition-transform duration-500 hover:rotate-1">
+                            <div class="image-container">
+                                <img src="https://i.ibb.co/hJNhChVc/IMG1-5.jpg" 
+                                     alt="Patrick Portrait" 
+                                     class="image-fit">
+                            </div>
+                        </div>
+                        <div class="text-center mt-6">
+                            <h4 class="text-3xl font-dancing text-gradient-vanessa font-bold mb-2">My Perfect Soul</h4>
+                            <p class="text-elegant font-comfortaa font-medium">The face I want to wake up to forever 🌸</p>
+                        </div>
+                    </div>
+
+                    <div class="fade-in-up" style="animation-delay: 1.4s;">
+                        <div class="vanessa-frame hover:scale-105 transition-transform duration-500 hover:-rotate-1">
+                            <div class="image-container">
+                                <img src="https://i.ibb.co/27KQ3T3H/IMG1-10.jpg" 
+                                     alt="Patrick Confident" 
+                                     class="image-fit">
+                            </div>
+                        </div>
+                        <div class="text-center mt-6">
+                            <h4 class="text-3xl font-dancing text-gradient-vanessa font-bold mb-2">My Confident Love</h4>
+                            <p class="text-elegant font-comfortaa font-medium">Strong and gentle, my perfect protector 💖</p>
+                        </div>
+                    </div>
+
+                    <div class="fade-in-up" style="animation-delay: 1.6s;">
+                        <div class="vanessa-frame hover:scale-105 transition-transform duration-500 hover:rotate-2">
+                            <div class="image-container">
+                                <img src="https://i.ibb.co/QvZGhWjz/IMG1-8.jpg" 
+                                     alt="Patrick Casual" 
+                                     class="image-fit">
+                            </div>
+                        </div>
+                        <div class="text-center mt-6">
+                            <h4 class="text-3xl font-dancing text-gradient-vanessa font-bold mb-2">My Everyday Magic</h4>
+                            <p class="text-elegant font-comfortaa font-medium">Making ordinary moments extraordinary 🌺</p>
+                        </div>
+                    </div>
+
+                    <div class="fade-in-up" style="animation-delay: 1.8s;">
+                        <div class="vanessa-frame hover:scale-105 transition-transform duration-500 hover:-rotate-2">
+                            <div class="image-container">
+                                <img src="https://i.ibb.co/8kFFLsJ/IMG1-9.jpg" 
+                                     alt="Patrick Final" 
+                                     class="image-fit">
+                            </div>
+                        </div>
+                        <div class="text-center mt-6">
+                            <h4 class="text-3xl font-dancing text-gradient-vanessa font-bold mb-2">My Forever Everything</h4>
+                            <p class="text-elegant font-comfortaa font-medium">The love of all my lifetimes 💕</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Love Messages Grid -->
+            <section class="mb-24 fade-in-up" style="animation-delay: 2s;">
+                <h3 class="heading-secondary font-dancing text-center text-gradient-vanessa mb-16">
+                    Love Letters for My Yabby 💌
+                </h3>
+                <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                    <div class="glass-vanessa rounded-3xl p-12 fade-in-up" style="animation-delay: 2.2s;">
+                        <div class="text-center mb-8">
+                            <div class="text-8xl mb-6 bounce">🌸</div>
+                            <h4 class="text-4xl font-dancing font-bold text-gradient-vanessa">My Beautiful Blossom</h4>
+                        </div>
+                        <div class="love-quote">
+                            <p class="text-elegant text-body leading-relaxed font-comfortaa font-medium text-center">
+                                You bloom in my heart like the most beautiful cherry blossom, 
+                                filling every corner of my soul with colorful petals of pure joy and endless love, Vanessa my yabby.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-vanessa rounded-3xl p-12 fade-in-up" style="animation-delay: 2.4s;">
+                        <div class="text-center mb-8">
+                            <div class="text-8xl mb-6 bounce">💖</div>
+                            <h4 class="text-4xl font-dancing font-bold text-gradient-vanessa">My Beating Heart</h4>
+                        </div>
+                        <div class="love-quote">
+                            <p class="text-elegant text-body leading-relaxed font-comfortaa font-medium text-center">
+                                Every heartbeat whispers your name, every breath carries your love, 
+                                every moment spent with you is a beautiful miracle that I treasure forever, my yabby.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-vanessa rounded-3xl p-12 fade-in-up" style="animation-delay: 2.6s;">
+                        <div class="text-center mb-8">
+                            <div class="text-8xl mb-6 bounce">🌺</div>
+                            <h4 class="text-4xl font-dancing font-bold text-gradient-vanessa">My Tropical Paradise</h4>
+                        </div>
+                        <div class="love-quote">
+                            <p class="text-elegant text-body leading-relaxed font-comfortaa font-medium text-center">
+                                In your arms, I've found my tropical paradise where beautiful hibiscus flowers bloom eternally, 
+                                and every sunrise brings a new chapter of our love story, Vanessa.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-vanessa rounded-3xl p-12 fade-in-up" style="animation-delay: 2.8s;">
+                        <div class="text-center mb-8">
+                            <div class="text-8xl mb-6 bounce">💫</div>
+                            <h4 class="text-4xl font-dancing font-bold text-gradient-vanessa">My Shining Star</h4>
+                        </div>
+                        <div class="love-quote">
+                            <p class="text-elegant text-body leading-relaxed font-comfortaa font-medium text-center">
+                                You're the brightest star in my universe, guiding me through life with your radiant love, 
+                                illuminating every path we walk together with pure magic, my beautiful yabby.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Love Declaration -->
+            <section class="text-center mb-24 fade-in-up" style="animation-delay: 3s;">
+                <div class="vanessa-gradient rounded-3xl p-6 max-w-6xl mx-auto pulse-love">
+                    <div class="glass-vanessa rounded-3xl p-16 md:p-20">
+                        <h3 class="heading-secondary font-dancing font-bold text-gradient-vanessa mb-12">
+                            My Dearest Beautiful Angel Vanessa 💖✨
+                        </h3>
+                        <div class="max-w-5xl mx-auto space-y-10">
+                            <div class="love-quote">
+                                <p class="text-body text-elegant leading-relaxed font-comfortaa font-medium">
+                                    I painted this digital love letter in beautiful colors because that's the color of my heart when I think of you, my yabby. 
+                                    Every pixel, every word, every gentle animation represents a beat of my heart that belongs completely to you.
+                                </p>
+                            </div>
+                            <div class="love-quote">
+                                <p class="text-body text-elegant leading-relaxed font-comfortaa font-medium">
+                                    You've taught me that love isn't just a feeling - it's a beautiful paradise where two souls dance together in perfect harmony. 
+                                    When I look into your eyes, I see our future painted in the most magnificent shades of rose and coral, Vanessa.
+                                </p>
+                            </div>
+                            <div class="text-5xl font-dancing text-gradient-vanessa font-bold my-8">
+                                I love you beyond every beautiful sunset and back again, my yabby 🌸💖
+                            </div>
+                            <div class="love-quote">
+                                <p class="text-body text-elegant leading-relaxed font-comfortaa font-medium">
+                                    Thank you for being my beautiful paradise, my cotton candy dream, my strawberry sunrise, and my forever love. 
+                                    You are the most extraordinary woman in the universe, and I'm the luckiest man alive to call you mine, Vanessa my yabby! 💕✨
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Love Button -->
+            <section class="text-center mb-24 fade-in-up" style="animation-delay: 3.2s;">
+                <button id="loveButton" class="vanessa-gradient text-white px-20 py-8 rounded-full text-3xl font-bold shadow-2xl transform transition-all duration-500 hover:scale-110 hover:shadow-3xl mb-16 pulse-love">
+                    💖 Unlock Vanessa's Paradise 💖
+                </button>
+                <div id="surpriseMessage" class="hidden">
+                    <div class="vanessa-gradient rounded-3xl p-6 max-w-4xl mx-auto">
+                        <div class="glass-vanessa rounded-3xl p-16 text-center">
+                            <div class="text-9xl mb-10 bounce">🌸</div>
+                            <p class="text-5xl font-dancing text-gradient-vanessa mb-10 font-bold">
+                                SURPRISE MY BEAUTIFUL ANGEL! 🎉💖
+                            </p>
+                            <div class="love-quote mb-10">
+                                <p class="text-body text-elegant leading-relaxed font-comfortaa font-medium">
+                                    Every breath you take makes the world more beautiful! You're my sunrise, my sunset, my magical dreams. 
+                                    I thank every star in the galaxy for bringing you into my life. You're my miracle, my treasure, my forever beautiful paradise, Vanessa my yabby! 
+                                </p>
+                            </div>
+                            <p class="text-4xl font-dancing text-gradient-vanessa mb-8 font-bold">
+                                I ADORE YOU INFINITELY, VANESSA MY YABBY! 💕✨🌸
+                            </p>
+                            <p class="text-2xl font-bold text-elegant font-comfortaa">
+                                - Your devoted Patrick, who loves you more than all the beautiful flowers in the world 😍💍✨
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="text-center py-16 fade-in-up" style="animation-delay: 3.4s;">
+                <div class="flex justify-center items-center space-x-8 text-6xl mb-10">
+                    <span class="bounce">🌸</span>
+                    <span class="text-3xl font-dancing text-elegant font-bold">Crafted with infinite love by Patrick</span>
+                    <span class="bounce" style="animation-delay: 1s;">💖</span>
+                </div>
+                <p class="text-2xl text-elegant mb-8 font-comfortaa font-bold">
+                    For my precious Vanessa • My Beautiful Paradise • My Yabby ❤ • 2024 ✨
+                </p>
+                <div class="text-5xl space-x-6">
+                    <span class="bounce">🌸</span>
+                    <span class="bounce" style="animation-delay: 0.5s;">💖</span>
+                    <span class="bounce" style="animation-delay: 1s;">🌺</span>
+                    <span class="bounce" style="animation-delay: 1.5s;">💫</span>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+            document.querySelectorAll('.glass-vanessa').forEach(el => el.classList.add('dark'));
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+                document.querySelectorAll('.glass-vanessa').forEach(el => el.classList.add('dark'));
+            } else {
+                document.documentElement.classList.remove('dark');
+                document.querySelectorAll('.glass-vanessa').forEach(el => el.classList.remove('dark'));
+            }
+        });
+
+        // Audio Management
+        const audio = document.getElementById('backgroundMusic');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const playIcon = document.getElementById('playIcon');
+        const audioVisualizer = document.getElementById('audioVisualizer');
+        let isPlaying = false;
+
+        playPauseBtn.addEventListener('click', function() {
+            if (isPlaying) {
+                audio.pause();
+                playIcon.textContent = '▶️';
+                audioVisualizer.style.display = 'none';
+                isPlaying = false;
+            } else {
+                audio.play().then(() => {
+                    playIcon.textContent = '⏸️';
+                    audioVisualizer.style.display = 'flex';
+                    isPlaying = true;
+                }).catch(e => {
+                    console.log('Audio play failed:', e);
+                });
+            }
+        });
+
+        // Love Entry Modal Logic
+        const loveModal = document.getElementById('loveModal');
+        const mainContent = document.getElementById('mainContent');
+        
+        document.getElementById('enterBtn').addEventListener('click', function() {
+            loveModal.classList.add('hidden');
+            mainContent.classList.remove('hidden');
+            createVanessaExplosion();
+            // Auto-play music when entering
+            setTimeout(() => {
+                audio.play().then(() => {
+                    playIcon.textContent = '⏸️';
+                    audioVisualizer.style.display = 'flex';
+                    isPlaying = true;
+                }).catch(e => console.log('Auto-play failed:', e));
+            }, 1000);
+        });
+
+        document.getElementById('exitBtn').addEventListener('click', function() {
+            window.open('https://www.google.com/search?q=how+to+find+true+love+relationship+advice', '_blank');
+        });
+
+        // Create beautiful explosion when entering
+        function createVanessaExplosion() {
+            const beautifulElements = ['🌸', '💖', '🌺', '💫', '💕', '✨', '🌙', '⭐', '🦋', '🌷'];
+            
+            for (let i = 0; i < 40; i++) {
+                setTimeout(() => {
+                    const element = document.createElement('div');
+                    element.textContent = beautifulElements[Math.floor(Math.random() * beautifulElements.length)];
+                    element.className = 'fixed text-5xl pointer-events-none z-50';
+                    element.style.left = Math.random() * window.innerWidth + 'px';
+                    element.style.top = window.innerHeight + 'px';
+                    element.style.animation = 'float 10s ease-out forwards';
+                    
+                    document.body.appendChild(element);
+                    
+                    setTimeout(() => {
+                        element.remove();
+                    }, 10000);
+                }, i * 150);
+            }
+        }
+
+        // Love button interaction
+        document.getElementById('loveButton').addEventListener('click', function() {
+            const message = document.getElementById('surpriseMessage');
+            const button = this;
+            
+            if (message.classList.contains('hidden')) {
+                message.classList.remove('hidden');
+                message.style.animation = 'fadeInUp 2s ease-out';
+                button.innerHTML = '💖 You Found Vanessa\'s Paradise! 💖';
+                button.classList.add('scale-125');
+                
+                // Create magical beautiful explosion
+                createMagicalExplosion();
+            } else {
+                message.classList.add('hidden');
+                button.innerHTML = '💖 Unlock Vanessa\'s Paradise 💖';
+                button.classList.remove('scale-125');
+            }
+        });
+
+        // Create magical explosion effect
+        function createMagicalExplosion() {
+            const magicalElements = ['🌸', '💖', '🌺','💕'];
+            
+            for (let i = 0; i < 60; i++) {
+                setTimeout(() => {
+                    const element = document.createElement('div');
+                    element.textContent = magicalElements[Math.floor(Math.random() * magicalElements.length)];
+                    element.className = 'fixed text-4xl pointer-events-none z-50';
+                    element.style.left = Math.random() * window.innerWidth + 'px';
+                    element.style.top = Math.random() * window.innerHeight + 'px';
+                    element.style.animation = 'float 8s ease-out forwards';
+                    
+                    document.body.appendChild(element);
+                    
+                    setTimeout(() => {
+                        element.remove();
+                    }, 8000);
+                }, i * 100);
+            }
+        }
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for scroll animations
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Add random beautiful sparkles
+        function createBeautifulSparkle() {
+            const sparkles = ['🌸', '💖'];
+            const sparkle = document.createElement('div');
+            sparkle.textContent = sparkles[Math.floor(Math.random() * sparkles.length)];
+            sparkle.className = 'fixed text-3xl sparkle pointer-events-none z-10 opacity-50';
+            sparkle.style.left = Math.random() * window.innerWidth + 'px';
+            sparkle.style.top = Math.random() * window.innerHeight + 'px';
+            
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 3000);
+        }
+
+        // Create sparkles every 3 seconds
+        setInterval(createBeautifulSparkle, 3000);
+    </script>
+</body>
+</html>
