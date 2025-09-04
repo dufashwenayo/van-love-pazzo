@@ -122,7 +122,7 @@
         
         .image-container {
             width: 100%;
-            height: 280px;
+            height: 300px;
             overflow: hidden;
             border-radius: 25px;
             position: relative;
@@ -130,7 +130,17 @@
         
         .main-image-container {
             width: 100%;
-            max-width: 420px;
+            max-width: 450px;
+            height: 450px;
+            overflow: hidden;
+            border-radius: 30px;
+            position: relative;
+            margin: 0 auto;
+        }
+        
+        .couple-image-container {
+            width: 100%;
+            max-width: 380px;
             height: 420px;
             overflow: hidden;
             border-radius: 30px;
@@ -228,24 +238,42 @@
         
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
-            max-width: 1200px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .couple-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            max-width: 1000px;
             margin: 0 auto;
         }
         
         @media (max-width: 768px) {
             .main-image-container {
                 width: 100%;
-                max-width: 320px;
-                height: 320px;
+                max-width: 350px;
+                height: 350px;
+            }
+            .couple-image-container {
+                width: 100%;
+                max-width: 300px;
+                height: 350px;
             }
             .image-container {
-                height: 250px;
+                height: 280px;
             }
             .gallery-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
+                padding: 0 10px;
+            }
+            .couple-gallery {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
                 padding: 0 10px;
             }
             .music-controls {
@@ -257,13 +285,19 @@
         
         @media (max-width: 480px) {
             .main-image-container {
-                height: 280px;
+                height: 300px;
+            }
+            .couple-image-container {
+                height: 300px;
             }
             .image-container {
-                height: 220px;
+                height: 250px;
             }
             .gallery-grid {
                 gap: 1.5rem;
+            }
+            .couple-gallery {
+                gap: 2rem;
             }
         }
         
@@ -378,13 +412,13 @@
         <!-- Main Content -->
         <main class="container mx-auto px-4 py-10 max-w-7xl">
             
-            <!-- Hero Section -->
+            <!-- Hero Section with Vanessa -->
             <section class="text-center mb-24 fade-in-up" style="animation-delay: 0.3s;">
                 <div class="relative inline-block mb-12">
                     <div class="main-sweet-frame pulse-love">
                         <div class="main-image-container">
-                            <img src="https://i.ibb.co/21d2Hz1Y/Whats-App-Image-2025-08-11-at-10-27-51-removebg-preview.png" 
-                                 alt="Patrick and Vanessa - Sweet Love Story" 
+                            <img src="https://pfst.cf2.poecdn.net/base/image/d9b9005bddf4b74dd4c450866c3f266638a8659ae9194f06009ae0bc90ece6be?w=540&h=960" 
+                                 alt="Vanessa - My Beautiful Sweet Angel" 
                                  class="image-fit">
                         </div>
                     </div>
@@ -395,7 +429,7 @@
                 </div>
                 
                 <h2 class="heading-secondary font-dancing text-gradient-sweet mb-10">
-                    When Dreams Become Sweet Reality ✨
+                    My Beautiful Sweet Angel Vanessa ✨💖
                 </h2>
                 <div class="max-w-5xl mx-auto glass-sweet rounded-3xl p-8 md:p-10">
                     <div class="love-quote">
@@ -408,105 +442,49 @@
                 </div>
             </section>
 
-            <!-- Photo Gallery -->
-            <section class="mb-24 fade-in-up" style="animation-delay: 0.6s;">
+            <!-- Together Forever Section -->
+            <section class="mb-24 fade-in-up" style="animation-delay: 0.5s;">
                 <h3 class="heading-secondary font-dancing text-center text-gradient-sweet mb-16">
-                    My Beautiful Sweet King 👑💖
+                    Together Forever in Sweet Paradise 💖✨
                 </h3>
-                <div class="gallery-grid">
-                    <div class="fade-in-up" style="animation-delay: 0.8s;">
+                <div class="couple-gallery">
+                    <div class="fade-in-up" style="animation-delay: 0.7s;">
                         <div class="sweet-frame hover:scale-105 transition-transform duration-500 hover:rotate-2">
-                            <div class="image-container">
-                                <img src="https://i.ibb.co/0VFg1F7T/IMG1-1.jpg" 
-                                     alt="My Handsome Patrick" 
+                            <div class="couple-image-container">
+                                <img src="https://pfst.cf2.poecdn.net/base/image/a03fc1983ac9e10daaf2556b16b6fec93e62d2ae748c5201e2cdef2a224bc68e?w=960&h=1280" 
+                                     alt="Patrick - My Handsome King" 
                                      class="image-fit">
                             </div>
                         </div>
                         <div class="text-center mt-6">
-                            <h4 class="text-2xl md:text-3xl font-dancing text-gradient-sweet font-bold mb-2">My Handsome King 👑</h4>
-                            <p class="text-elegant font-comfortaa font-medium">The man who stole my heart completely</p>
+                            <h4 class="text-2xl md:text-3xl font-dancing text-gradient-sweet font-bold mb-2">My Handsome King Patrick 👑</h4>
+                            <p class="text-elegant font-comfortaa font-medium">The man who makes every day magical</p>
                         </div>
                     </div>
 
-                    <div class="fade-in-up" style="animation-delay: 1s;">
+                    <div class="fade-in-up" style="animation-delay: 0.9s;">
                         <div class="sweet-frame hover:scale-105 transition-transform duration-500 hover:-rotate-2">
-                            <div class="image-container">
-                                <img src="https://i.ibb.co/sdcHGmJk/IMG1-2.jpg" 
-                                     alt="Patrick's Style" 
+                            <div class="couple-image-container">
+                                <img src="https://pfst.cf2.poecdn.net/base/image/fd77702ac08f405d25335e0e97b64ad715fa7d11a81e12447ca0799d071b0bc8?w=3520&h=4928" 
+                                     alt="Patrick - Portrait of My Love" 
                                      class="image-fit">
                             </div>
                         </div>
                         <div class="text-center mt-6">
-                            <h4 class="text-2xl md:text-3xl font-dancing text-gradient-sweet font-bold mb-2">My Stylish Prince 💫</h4>
-                            <p class="text-elegant font-comfortaa font-medium">Effortlessly charming in every way</p>
-                        </div>
-                    </div>
-
-                    <div class="fade-in-up" style="animation-delay: 1.2s;">
-                        <div class="sweet-frame hover:scale-105 transition-transform duration-500 hover:rotate-1">
-                            <div class="image-container">
-                                <img src="https://i.ibb.co/hJNhChVc/IMG1-5.jpg" 
-                                     alt="Patrick Portrait" 
-                                     class="image-fit">
-                            </div>
-                        </div>
-                        <div class="text-center mt-6">
-                            <h4 class="text-2xl md:text-3xl font-dancing text-gradient-sweet font-bold mb-2">My Perfect Soul 🌸</h4>
-                            <p class="text-elegant font-comfortaa font-medium">The face I want to wake up to forever</p>
-                        </div>
-                    </div>
-
-                    <div class="fade-in-up" style="animation-delay: 1.4s;">
-                        <div class="sweet-frame hover:scale-105 transition-transform duration-500 hover:-rotate-1">
-                            <div class="image-container">
-                                <img src="https://i.ibb.co/27KQ3T3H/IMG1-10.jpg" 
-                                     alt="Patrick Confident" 
-                                     class="image-fit">
-                            </div>
-                        </div>
-                        <div class="text-center mt-6">
-                            <h4 class="text-2xl md:text-3xl font-dancing text-gradient-sweet font-bold mb-2">My Confident Love 💖</h4>
-                            <p class="text-elegant font-comfortaa font-medium">Strong and gentle, my perfect protector</p>
-                        </div>
-                    </div>
-
-                    <div class="fade-in-up" style="animation-delay: 1.6s;">
-                        <div class="sweet-frame hover:scale-105 transition-transform duration-500 hover:rotate-2">
-                            <div class="image-container">
-                                <img src="https://i.ibb.co/QvZGhWjz/IMG1-8.jpg" 
-                                     alt="Patrick Casual" 
-                                     class="image-fit">
-                            </div>
-                        </div>
-                        <div class="text-center mt-6">
-                            <h4 class="text-2xl md:text-3xl font-dancing text-gradient-sweet font-bold mb-2">My Everyday Magic 🌺</h4>
-                            <p class="text-elegant font-comfortaa font-medium">Making ordinary moments extraordinary</p>
-                        </div>
-                    </div>
-
-                    <div class="fade-in-up" style="animation-delay: 1.8s;">
-                        <div class="sweet-frame hover:scale-105 transition-transform duration-500 hover:-rotate-2">
-                            <div class="image-container">
-                                <img src="https://i.ibb.co/8kFFLsJ/IMG1-9.jpg" 
-                                     alt="Patrick Final" 
-                                     class="image-fit">
-                            </div>
-                        </div>
-                        <div class="text-center mt-6">
-                            <h4 class="text-2xl md:text-3xl font-dancing text-gradient-sweet font-bold mb-2">My Forever Everything 💕</h4>
-                            <p class="text-elegant font-comfortaa font-medium">The love of all my lifetimes</p>
+                            <h4 class="text-2xl md:text-3xl font-dancing text-gradient-sweet font-bold mb-2">My Perfect Soul Patrick 💫</h4>
+                            <p class="text-elegant font-comfortaa font-medium">Strong, confident, and absolutely perfect</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             <!-- Love Messages Grid -->
-            <section class="mb-24 fade-in-up" style="animation-delay: 2s;">
+            <section class="mb-24 fade-in-up" style="animation-delay: 1.2s;">
                 <h3 class="heading-secondary font-dancing text-center text-gradient-sweet mb-16">
                     Sweet Love Letters for My Angel 💌
                 </h3>
                 <div class="grid md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
-                    <div class="glass-sweet rounded-3xl p-8 md:p-12 fade-in-up" style="animation-delay: 2.2s;">
+                    <div class="glass-sweet rounded-3xl p-8 md:p-12 fade-in-up" style="animation-delay: 1.4s;">
                         <div class="text-center mb-8">
                             <div class="text-6xl md:text-8xl mb-6 bounce">🌸</div>
                             <h4 class="text-3xl md:text-4xl font-dancing font-bold text-gradient-sweet">My Beautiful Blossom</h4>
@@ -519,7 +497,7 @@
                         </div>
                     </div>
 
-                    <div class="glass-sweet rounded-3xl p-8 md:p-12 fade-in-up" style="animation-delay: 2.4s;">
+                    <div class="glass-sweet rounded-3xl p-8 md:p-12 fade-in-up" style="animation-delay: 1.6s;">
                         <div class="text-center mb-8">
                             <div class="text-6xl md:text-8xl mb-6 bounce">💖</div>
                             <h4 class="text-3xl md:text-4xl font-dancing font-bold text-gradient-sweet">My Beating Heart</h4>
@@ -532,7 +510,7 @@
                         </div>
                     </div>
 
-                    <div class="glass-sweet rounded-3xl p-8 md:p-12 fade-in-up" style="animation-delay: 2.6s;">
+                    <div class="glass-sweet rounded-3xl p-8 md:p-12 fade-in-up" style="animation-delay: 1.8s;">
                         <div class="text-center mb-8">
                             <div class="text-6xl md:text-8xl mb-6 bounce">🌺</div>
                             <h4 class="text-3xl md:text-4xl font-dancing font-bold text-gradient-sweet">My Sweet Paradise</h4>
@@ -545,7 +523,7 @@
                         </div>
                     </div>
 
-                    <div class="glass-sweet rounded-3xl p-8 md:p-12 fade-in-up" style="animation-delay: 2.8s;">
+                    <div class="glass-sweet rounded-3xl p-8 md:p-12 fade-in-up" style="animation-delay: 2s;">
                         <div class="text-center mb-8">
                             <div class="text-6xl md:text-8xl mb-6 bounce">💫</div>
                             <h4 class="text-3xl md:text-4xl font-dancing font-bold text-gradient-sweet">My Shining Star</h4>
@@ -561,7 +539,7 @@
             </section>
 
             <!-- Final Love Declaration -->
-            <section class="text-center mb-24 fade-in-up" style="animation-delay: 3s;">
+            <section class="text-center mb-24 fade-in-up" style="animation-delay: 2.2s;">
                 <div class="sweet-gradient rounded-3xl p-4 md:p-6 max-w-6xl mx-auto pulse-love">
                     <div class="glass-sweet rounded-3xl p-12 md:p-20">
                         <h3 class="heading-secondary font-dancing font-bold text-gradient-sweet mb-12">
@@ -595,7 +573,7 @@
             </section>
 
             <!-- Interactive Love Button -->
-            <section class="text-center mb-24 fade-in-up" style="animation-delay: 3.2s;">
+            <section class="text-center mb-24 fade-in-up" style="animation-delay: 2.4s;">
                 <button id="loveButton" class="sweet-gradient text-white px-16 md:px-20 py-6 md:py-8 rounded-full text-2xl md:text-3xl font-bold shadow-2xl transform transition-all duration-500 hover:scale-110 hover:shadow-3xl mb-16 pulse-love">
                     💖 Unlock Sweet Paradise 💖
                 </button>
@@ -624,7 +602,7 @@
             </section>
 
             <!-- Footer -->
-            <footer class="text-center py-12 md:py-16 fade-in-up" style="animation-delay: 3.4s;">
+            <footer class="text-center py-12 md:py-16 fade-in-up" style="animation-delay: 2.6s;">
                 <div class="flex justify-center items-center space-x-6 md:space-x-8 text-5xl md:text-6xl mb-10">
                     <span class="bounce">🌸</span>
                     <span class="text-2xl md:text-3xl font-dancing text-elegant font-bold">Crafted with infinite love by Patrick</span>
