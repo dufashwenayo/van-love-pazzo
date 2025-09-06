@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patrick & Vanessa - Eternal Love Symphony</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Dancing+Script:wght@400;500;600;700&family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Dancing+Script:wght@400;500;600;700&family=Comfortaa:wght@300;400;500;600;700&family=Great+Vibes:wght@400&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -23,12 +23,19 @@
                         warmEmbrace: '#FFCCCB',
                         romanticMist: '#E6E6FA',
                         heartbeat: '#DC143C',
-                        soulConnection: '#800020'
+                        soulConnection: '#800020',
+                        pureWhite: '#FFFFFF',
+                        angelicWhite: '#FEFEFE',
+                        cloudWhite: '#F8F8FF',
+                        pearlWhite: '#F5F5F5',
+                        divineWhite: '#FFFAFA'
                     },
                     fontFamily: {
                         'poppins': ['Poppins', 'sans-serif'],
                         'dancing': ['Dancing Script', 'cursive'],
-                        'comfortaa': ['Comfortaa', 'cursive']
+                        'comfortaa': ['Comfortaa', 'cursive'],
+                        'great-vibes': ['Great Vibes', 'cursive'],
+                        'playfair': ['Playfair Display', 'serif']
                     }
                 }
             }
@@ -37,17 +44,17 @@
     <style>
         @keyframes heartbeat {
             0%, 100% { transform: scale(1); }
-            25% { transform: scale(1.05); }
-            50% { transform: scale(1.1); }
-            75% { transform: scale(1.05); }
+            25% { transform: scale(1.08); }
+            50% { transform: scale(1.15); }
+            75% { transform: scale(1.08); }
         }
         @keyframes soulFloat {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
-            33% { transform: translateY(-15px) rotate(3deg); }
-            66% { transform: translateY(-25px) rotate(-3deg); }
+            33% { transform: translateY(-20px) rotate(5deg); }
+            66% { transform: translateY(-35px) rotate(-5deg); }
         }
         @keyframes etherealFade {
-            from { opacity: 0; transform: translateY(40px) scale(0.9); }
+            from { opacity: 0; transform: translateY(50px) scale(0.95); }
             to { opacity: 1; transform: translateY(0) scale(1); }
         }
         @keyframes loveWave {
@@ -59,38 +66,50 @@
         }
         @keyframes diamondSparkle {
             0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
-            25% { opacity: 0.3; transform: scale(0.5) rotate(90deg); }
-            50% { opacity: 1; transform: scale(1) rotate(180deg); }
-            75% { opacity: 0.7; transform: scale(0.8) rotate(270deg); }
+            25% { opacity: 0.4; transform: scale(0.6) rotate(90deg); }
+            50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
+            75% { opacity: 0.8; transform: scale(0.9) rotate(270deg); }
         }
         @keyframes devotionPulse {
             0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.03); opacity: 0.9; }
+            50% { transform: scale(1.05); opacity: 0.95; }
+        }
+        @keyframes angelicGlow {
+            0%, 100% { box-shadow: 0 0 30px rgba(255, 255, 255, 0.3), 0 0 60px rgba(247, 202, 201, 0.2); }
+            50% { box-shadow: 0 0 50px rgba(255, 255, 255, 0.5), 0 0 100px rgba(247, 202, 201, 0.4); }
+        }
+        @keyframes particleFloat {
+            0% { transform: translateY(100vh) translateX(0px) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-20vh) translateX(100px) rotate(360deg); opacity: 0; }
         }
         
-        .heartbeat { animation: heartbeat 2.5s ease-in-out infinite; }
-        .soul-float { animation: soulFloat 7s ease-in-out infinite; }
-        .ethereal-fade { animation: etherealFade 1.5s ease-out; }
-        .devotion-pulse { animation: devotionPulse 5s ease-in-out infinite; }
-        .diamond-sparkle { animation: diamondSparkle 4.5s ease-in-out infinite; }
+        .heartbeat { animation: heartbeat 2.8s ease-in-out infinite; }
+        .soul-float { animation: soulFloat 8s ease-in-out infinite; }
+        .ethereal-fade { animation: etherealFade 1.8s ease-out; }
+        .devotion-pulse { animation: devotionPulse 6s ease-in-out infinite; }
+        .diamond-sparkle { animation: diamondSparkle 5s ease-in-out infinite; }
+        .angelic-glow { animation: angelicGlow 4s ease-in-out infinite; }
+        .particle-float { animation: particleFloat 15s linear infinite; }
         
         body {
-            background: linear-gradient(135deg, #FFC0CB 0%, #FFB7C5 15%, #F7CAC9 30%, #E6E6FA 45%, #FFCCCB 60%, #FFC0CB 75%, #FFB7C5 90%, #F7CAC9 100%);
-            background-size: 500% 500%;
-            animation: loveWave 20s ease infinite;
+            background: linear-gradient(135deg, #FFFFFF 0%, #FEFEFE 10%, #F8F8FF 20%, #FFFAFA 30%, #FFB7C5 40%, #F7CAC9 50%, #E6E6FA 60%, #FFFAFA 70%, #F8F8FF 80%, #FEFEFE 90%, #FFFFFF 100%);
+            background-size: 400% 400%;
+            animation: loveWave 25s ease infinite;
             min-height: 100vh;
         }
         
         .dark body {
-            background: linear-gradient(135deg, #2C1810 0%, #722F37 20%, #800020 40%, #8B0000 60%, #722F37 80%, #2C1810 100%);
-            background-size: 500% 500%;
-            animation: loveWave 20s ease infinite;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2C1810 15%, #722F37 30%, #800020 45%, #8B0000 60%, #722F37 75%, #2C1810 90%, #1a1a1a 100%);
+            background-size: 400% 400%;
+            animation: loveWave 25s ease infinite;
         }
         
         .eternal-love-gradient {
-            background: linear-gradient(135deg, #8B0000, #B22222, #DC143C, #C21807, #DA020E);
-            background-size: 400% 400%;
-            animation: loveWave 12s ease infinite;
+            background: linear-gradient(135deg, #FFFFFF, #F8F8FF, #FFB7C5, #F7CAC9, #DC143C);
+            background-size: 300% 300%;
+            animation: loveWave 15s ease infinite;
         }
         
         .soul-text-gradient {
@@ -98,51 +117,53 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            background-size: 300% 300%;
-            animation: loveWave 10s ease infinite;
+            background-size: 200% 200%;
+            animation: loveWave 12s ease infinite;
         }
         
         .divine-glass {
-            background: rgba(255, 192, 203, 0.25);
-            backdrop-filter: blur(25px);
-            border: 2px solid rgba(220, 20, 60, 0.3);
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(30px);
+            border: 3px solid rgba(255, 255, 255, 0.4);
             box-shadow: 
-                0 30px 60px rgba(139, 0, 0, 0.2),
-                0 0 0 1px rgba(255, 255, 255, 0.25) inset;
+                0 25px 50px rgba(255, 255, 255, 0.1),
+                0 0 0 1px rgba(247, 202, 201, 0.3) inset,
+                0 0 50px rgba(220, 20, 60, 0.15);
         }
         
         .dark .divine-glass {
-            background: rgba(44, 24, 16, 0.7);
-            border: 2px solid rgba(220, 20, 60, 0.4);
+            background: rgba(44, 24, 16, 0.8);
+            border: 3px solid rgba(220, 20, 60, 0.5);
             box-shadow: 
-                0 30px 60px rgba(0, 0, 0, 0.5),
-                0 0 0 1px rgba(220, 20, 60, 0.3) inset;
+                0 25px 50px rgba(0, 0, 0, 0.7),
+                0 0 0 1px rgba(220, 20, 60, 0.4) inset,
+                0 0 50px rgba(220, 20, 60, 0.3);
         }
         
         .sacred-image-container {
             width: 100%;
-            height: 380px;
+            height: 420px;
             overflow: hidden;
-            border-radius: 25px;
+            border-radius: 30px;
             position: relative;
         }
         
         .divine-portrait-container {
             width: 100%;
-            max-width: 450px;
-            height: 520px;
+            max-width: 480px;
+            height: 560px;
             overflow: hidden;
-            border-radius: 30px;
+            border-radius: 35px;
             position: relative;
             margin: 0 auto;
         }
         
         .beloved-image-container {
             width: 100%;
-            max-width: 380px;
-            height: 480px;
+            max-width: 400px;
+            height: 520px;
             overflow: hidden;
-            border-radius: 28px;
+            border-radius: 32px;
             position: relative;
             margin: 0 auto;
         }
@@ -152,84 +173,86 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
-            transition: transform 0.8s ease;
-            filter: brightness(1.05) contrast(1.1) saturate(1.1);
+            transition: transform 1s ease;
+            filter: brightness(1.08) contrast(1.15) saturate(1.2);
         }
         
         .soulmate-image-fit:hover {
-            transform: scale(1.02);
+            transform: scale(1.05);
         }
         
         .eternal-frame {
-            background: linear-gradient(45deg, #8B0000, #B22222, #DC143C, #DA020E, #C21807);
-            padding: 6px;
-            border-radius: 35px;
-            box-shadow: 0 35px 70px rgba(139, 0, 0, 0.4);
+            background: linear-gradient(45deg, #FFFFFF, #F8F8FF, #DC143C, #B22222, #8B0000, #F7CAC9, #FFFFFF);
+            padding: 8px;
+            border-radius: 40px;
+            box-shadow: 0 30px 60px rgba(220, 20, 60, 0.3);
         }
         
         .divine-frame {
-            background: linear-gradient(45deg, #8B0000, #B22222, #DC143C, #DA020E);
-            padding: 7px;
-            border-radius: 38px;
-            box-shadow: 0 40px 80px rgba(139, 0, 0, 0.5);
+            background: linear-gradient(45deg, #FFFFFF, #F8F8FF, #DC143C, #B22222, #8B0000, #FFFFFF);
+            padding: 10px;
+            border-radius: 45px;
+            box-shadow: 0 35px 70px rgba(220, 20, 60, 0.4);
         }
         
         .music-sanctuary {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
+            bottom: 30px;
+            right: 30px;
             z-index: 1000;
-            background: rgba(255, 192, 203, 0.4);
-            backdrop-filter: blur(20px);
-            border-radius: 60px;
-            padding: 15px 25px;
-            box-shadow: 0 20px 40px rgba(139, 0, 0, 0.3);
-            border: 2px solid rgba(220, 20, 60, 0.3);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(25px);
+            border-radius: 70px;
+            padding: 18px 30px;
+            box-shadow: 0 25px 50px rgba(220, 20, 60, 0.25);
+            border: 3px solid rgba(255, 255, 255, 0.6);
         }
         
         .soul-heading {
-            font-size: clamp(2.8rem, 8vw, 6rem);
+            font-size: clamp(3rem, 10vw, 7rem);
             font-weight: 900;
-            line-height: 1.05;
+            line-height: 1;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
         }
         
         .heart-heading {
-            font-size: clamp(1.8rem, 5vw, 3.5rem);
+            font-size: clamp(2rem, 6vw, 4rem);
             font-weight: 800;
-            line-height: 1.15;
+            line-height: 1.1;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.4);
         }
         
         .divine-text {
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-            line-height: 1.8;
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            line-height: 1.9;
             font-weight: 600;
         }
         
         .sacred-text {
             color: #2C0A0E;
-            text-shadow: 0 2px 8px rgba(255, 255, 255, 0.4);
+            text-shadow: 0 2px 8px rgba(255, 255, 255, 0.6);
         }
         
         .dark .sacred-text {
             color: #F7CAC9;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
         }
         
         .eternal-heart {
-            width: 24px;
-            height: 22px;
+            width: 28px;
+            height: 26px;
             position: relative;
         }
         .eternal-heart:before,
         .eternal-heart:after {
             content: '';
-            width: 14px;
-            height: 22px;
+            width: 16px;
+            height: 26px;
             position: absolute;
-            left: 12px;
+            left: 14px;
             transform: rotate(-45deg);
             background: #DC143C;
-            border-radius: 12px 12px 0 0;
+            border-radius: 14px 14px 0 0;
         }
         .eternal-heart:after {
             left: 0;
@@ -238,46 +261,74 @@
         
         .devotion-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            max-width: 1300px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 4rem;
+            max-width: 1400px;
             margin: 0 auto;
         }
         
         .beloved-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 3.5rem;
-            max-width: 1000px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 4.5rem;
+            max-width: 1100px;
             margin: 0 auto;
+        }
+        
+        .floating-particle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 5;
+            font-size: 2rem;
+            opacity: 0;
+        }
+        
+        .love-particle {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            background: radial-gradient(circle, #DC143C, #FFB7C5);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 5;
+        }
+        
+        .interactive-heart {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .interactive-heart:hover {
+            transform: scale(1.2);
+            filter: drop-shadow(0 0 20px #DC143C);
         }
         
         @media (max-width: 768px) {
             .divine-portrait-container {
-                max-width: 340px;
-                height: 420px;
+                max-width: 360px;
+                height: 460px;
             }
             .beloved-image-container {
-                max-width: 300px;
-                height: 400px;
+                max-width: 320px;
+                height: 440px;
             }
             .sacred-image-container {
-                height: 320px;
+                height: 350px;
             }
             .devotion-gallery {
                 grid-template-columns: 1fr;
-                gap: 2rem;
-                padding: 0 15px;
+                gap: 2.5rem;
+                padding: 0 20px;
             }
             .beloved-gallery {
                 grid-template-columns: 1fr;
-                gap: 2.5rem;
-                padding: 0 15px;
+                gap: 3rem;
+                padding: 0 20px;
             }
             .music-sanctuary {
-                bottom: 20px;
-                right: 20px;
-                padding: 12px 20px;
+                bottom: 25px;
+                right: 25px;
+                padding: 15px 25px;
             }
         }
         
@@ -285,15 +336,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 4px;
+            gap: 5px;
         }
         
         .love-wave {
-            width: 4px;
-            height: 25px;
+            width: 5px;
+            height: 30px;
             background: linear-gradient(to top, #8B0000, #B22222, #DC143C);
-            border-radius: 3px;
-            animation: symphonyWave 1.4s ease-in-out infinite;
+            border-radius: 4px;
+            animation: symphonyWave 1.6s ease-in-out infinite;
         }
         
         .love-wave:nth-child(2) { animation-delay: 0.1s; }
@@ -302,36 +353,60 @@
         .love-wave:nth-child(5) { animation-delay: 0.4s; }
         
         @keyframes symphonyWave {
-            0%, 100% { height: 25px; }
-            50% { height: 8px; }
+            0%, 100% { height: 30px; }
+            50% { height: 10px; }
         }
         
         .eternal-promise {
             position: relative;
-            padding: 2rem;
-            margin: 2rem 0;
+            padding: 2.5rem;
+            margin: 2.5rem 0;
         }
         
         .eternal-promise:before {
             content: '"';
             position: absolute;
-            top: -15px;
+            top: -20px;
             left: 0;
-            font-size: 4rem;
+            font-size: 5rem;
             color: #B22222;
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Great Vibes', cursive;
             line-height: 1;
         }
         
         .eternal-promise:after {
             content: '"';
             position: absolute;
-            bottom: -15px;
+            bottom: -20px;
             right: 0;
-            font-size: 4rem;
+            font-size: 5rem;
             color: #B22222;
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Great Vibes', cursive;
             line-height: 1;
+        }
+        
+        .magical-button {
+            background: linear-gradient(45deg, #FFFFFF, #F8F8FF, #DC143C, #FFFFFF);
+            background-size: 200% 200%;
+            animation: loveWave 8s ease infinite;
+            border: 4px solid rgba(255, 255, 255, 0.8);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .magical-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.8s ease;
+        }
+        
+        .magical-button:hover:before {
+            left: 100%;
         }
     </style>
 </head>
@@ -343,9 +418,9 @@
     </audio>
 
     <!-- Music Controls -->
-    <div id="musicControls" class="music-sanctuary">
+    <div id="musicControls" class="music-sanctuary angelic-glow">
         <div class="flex items-center space-x-4">
-            <button id="playPauseBtn" class="w-14 h-14 rounded-full eternal-love-gradient flex items-center justify-center text-white text-xl hover:scale-110 transition-transform shadow-xl">
+            <button id="playPauseBtn" class="w-16 h-16 rounded-full eternal-love-gradient flex items-center justify-center text-white text-2xl hover:scale-110 transition-transform shadow-2xl">
                 <span id="playIcon">▶️</span>
             </button>
             <div class="symphony-visualizer" id="audioVisualizer" style="display: none;">
@@ -361,54 +436,54 @@
 
     <!-- Floating Elements -->
     <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div class="eternal-heart absolute top-24 left-12 soul-float opacity-25" style="animation-delay: 0s;"></div>
-        <div class="eternal-heart absolute top-48 right-24 soul-float opacity-30" style="animation-delay: 1s;"></div>
-        <div class="eternal-heart absolute bottom-40 left-24 soul-float opacity-25" style="animation-delay: 2s;"></div>
-        <div class="eternal-heart absolute bottom-24 right-16 soul-float opacity-30" style="animation-delay: 0.5s;"></div>
+        <div class="eternal-heart absolute top-28 left-16 soul-float opacity-30 interactive-heart" style="animation-delay: 0s;"></div>
+        <div class="eternal-heart absolute top-52 right-28 soul-float opacity-35 interactive-heart" style="animation-delay: 1s;"></div>
+        <div class="eternal-heart absolute bottom-44 left-28 soul-float opacity-30 interactive-heart" style="animation-delay: 2s;"></div>
+        <div class="eternal-heart absolute bottom-28 right-20 soul-float opacity-35 interactive-heart" style="animation-delay: 0.5s;"></div>
         
-        <div class="absolute top-1/4 left-1/4 w-4 h-4 bg-heartbeat rounded-full diamond-sparkle" style="animation-delay: 0s;"></div>
-        <div class="absolute top-3/4 right-1/4 w-5 h-5 bg-deepLove rounded-full diamond-sparkle" style="animation-delay: 1s;"></div>
-        <div class="absolute top-1/2 right-1/3 w-4 h-4 bg-passionRed rounded-full diamond-sparkle" style="animation-delay: 2s;"></div>
-        <div class="absolute bottom-1/4 left-1/3 w-4 h-4 bg-lovePotion rounded-full diamond-sparkle" style="animation-delay: 1.5s;"></div>
+        <div class="absolute top-1/4 left-1/4 w-5 h-5 bg-heartbeat rounded-full diamond-sparkle" style="animation-delay: 0s;"></div>
+        <div class="absolute top-3/4 right-1/4 w-6 h-6 bg-deepLove rounded-full diamond-sparkle" style="animation-delay: 1s;"></div>
+        <div class="absolute top-1/2 right-1/3 w-5 h-5 bg-passionRed rounded-full diamond-sparkle" style="animation-delay: 2s;"></div>
+        <div class="absolute bottom-1/4 left-1/3 w-5 h-5 bg-lovePotion rounded-full diamond-sparkle" style="animation-delay: 1.5s;"></div>
     </div>
 
     <div class="relative z-10">
         <!-- Header -->
-        <header class="text-center pt-16 pb-12 ethereal-fade">
-            <div class="text-7xl mb-8 heartbeat">💖</div>
-            <h1 class="soul-heading font-dancing soul-text-gradient mb-6">
+        <header class="text-center pt-20 pb-16 ethereal-fade">
+            <div class="text-8xl mb-10 heartbeat">💖</div>
+            <h1 class="soul-heading font-great-vibes soul-text-gradient mb-8">
                 Patrick & Vanessa
             </h1>
-            <div class="text-3xl md:text-4xl sacred-text font-comfortaa font-bold mb-4">
+            <div class="text-4xl md:text-5xl sacred-text font-playfair font-bold mb-6">
                 Eternal Symphony of Two Souls
             </div>
-            <p class="text-2xl md:text-3xl sacred-text font-dancing font-semibold">
+            <p class="text-3xl md:text-4xl sacred-text font-dancing font-semibold">
                 Where Every Heartbeat Whispers Your Name
                 <br>NDAGUKUNDA - My Soul's Deepest Devotion
             </p>
         </header>
 
         <!-- Main Content -->
-        <main class="container mx-auto px-4 py-10 max-w-7xl">
+        <main class="container mx-auto px-4 py-12 max-w-7xl">
             
             <!-- Hero Section with Vanessa -->
-            <section class="text-center mb-24 ethereal-fade" style="animation-delay: 0.3s;">
-                <div class="relative inline-block mb-12">
-                    <div class="divine-frame devotion-pulse">
+            <section class="text-center mb-28 ethereal-fade" style="animation-delay: 0.3s;">
+                <div class="relative inline-block mb-16">
+                    <div class="divine-frame devotion-pulse angelic-glow">
                         <div class="divine-portrait-container">
-                            <img src="https://pfst.cf2.poecdn.net/base/image/d9b9005bddf4b74dd4c450866c3f266638a8659ae9194f06009ae0bc90ece6be?w=540&h=960" 
+                            <img src="https://iili.io/KnYbW57.md.jpg" 
                                  alt="Vanessa - My Divine Angel" 
                                  class="soulmate-image-fit">
                         </div>
                     </div>
                 </div>
-                
-                <h2 class="heart-heading font-dancing soul-text-gradient mb-10">
+
+                <h2 class="heart-heading font-great-vibes soul-text-gradient mb-12">
                     Vanessa - The Cathedral of My Heart's Deepest Prayers
                 </h2>
-                <div class="max-w-5xl mx-auto divine-glass rounded-3xl p-8 md:p-12">
+                <div class="max-w-6xl mx-auto divine-glass rounded-3xl p-10 md:p-16 angelic-glow">
                     <div class="eternal-promise">
-                        <p class="divine-text sacred-text leading-relaxed font-comfortaa font-semibold text-center">
+                        <p class="divine-text sacred-text leading-relaxed font-playfair font-semibold text-center">
                             My beloved Vanessa, you are the sacred dawn that breathes life into my universe. 
                             In your presence, I discover infinity wrapped in tenderness, eternity captured in a single glance. 
                             You are not just my love - you are the very essence of what makes my soul believe in miracles, 
@@ -419,104 +494,104 @@
             </section>
 
             <!-- New Images Section - Patrick's Journey -->
-            <section class="mb-24 ethereal-fade" style="animation-delay: 0.5s;">
-                <h3 class="heart-heading font-dancing text-center soul-text-gradient mb-16">
+            <section class="mb-28 ethereal-fade" style="animation-delay: 0.5s;">
+                <h3 class="heart-heading font-great-vibes text-center soul-text-gradient mb-20">
                     The Sacred Chapters of Our Divine Love Story
                 </h3>
                 <div class="devotion-gallery">
                     <div class="ethereal-fade" style="animation-delay: 0.7s;">
-                        <div class="eternal-frame hover:scale-105 transition-transform duration-700">
+                        <div class="eternal-frame hover:scale-105 transition-transform duration-700 angelic-glow">
                             <div class="sacred-image-container">
-                                <img src="https://pfst.cf2.poecdn.net/base/image/40411921efd2c422592732ca6b7f26b8871081474eb874eb8f5ca37c78bf0aed?w=681&h=1043" 
+                                <img src="https://iili.io/KnYmW4R.md.jpg" 
                                      alt="Patrick - Promise of Healing" 
                                      class="soulmate-image-fit">
                             </div>
                         </div>
-                        <div class="text-center mt-6">
-                            <h4 class="text-2xl md:text-3xl font-dancing soul-text-gradient font-bold mb-3">Promise of Eternal Healing</h4>
-                            <p class="sacred-text font-comfortaa font-semibold">Through every storm, I am your unwavering lighthouse</p>
+                        <div class="text-center mt-8">
+                            <h4 class="text-3xl md:text-4xl font-dancing soul-text-gradient font-bold mb-4">Promise of Eternal Healing</h4>
+                            <p class="sacred-text font-playfair font-semibold text-lg">Through every storm, I am your unwavering lighthouse</p>
                         </div>
                     </div>
 
                     <div class="ethereal-fade" style="animation-delay: 0.9s;">
-                        <div class="eternal-frame hover:scale-105 transition-transform duration-700">
+                        <div class="eternal-frame hover:scale-105 transition-transform duration-700 angelic-glow">
                             <div class="sacred-image-container">
                                 <img src="https://pfst.cf2.poecdn.net/base/image/22327350c7f466021d1ced89785c42bf0f051e3d155b6d1d6c8a0ab433590f5f?w=822&h=1056" 
                                      alt="Patrick - Victory in Love" 
                                      class="soulmate-image-fit">
                             </div>
                         </div>
-                        <div class="text-center mt-6">
-                            <h4 class="text-2xl md:text-3xl font-dancing soul-text-gradient font-bold mb-3">Victory of Our Sacred Bond</h4>
-                            <p class="sacred-text font-comfortaa font-semibold">Every triumph is sweeter when shared with your soul</p>
+                        <div class="text-center mt-8">
+                            <h4 class="text-3xl md:text-4xl font-dancing soul-text-gradient font-bold mb-4">Victory of Our Sacred Bond</h4>
+                            <p class="sacred-text font-playfair font-semibold text-lg">Every triumph is sweeter when shared with your soul</p>
                         </div>
                     </div>
 
                     <div class="ethereal-fade" style="animation-delay: 1.1s;">
-                        <div class="eternal-frame hover:scale-105 transition-transform duration-700">
+                        <div class="eternal-frame hover:scale-105 transition-transform duration-700 angelic-glow">
                             <div class="sacred-image-container">
                                 <img src="https://pfst.cf2.poecdn.net/base/image/720fca68601070090f44d4c2351c5f3e43d0ac360e375b5aac4443482ec0797f?w=720&h=959" 
                                      alt="Patrick - Contemplation of Love" 
                                      class="soulmate-image-fit">
                             </div>
                         </div>
-                        <div class="text-center mt-6">
-                            <h4 class="text-2xl md:text-3xl font-dancing soul-text-gradient font-bold mb-3">Meditation on Sacred Love</h4>
-                            <p class="sacred-text font-comfortaa font-semibold">In silence, my heart speaks your name in prayer</p>
+                        <div class="text-center mt-8">
+                            <h4 class="text-3xl md:text-4xl font-dancing soul-text-gradient font-bold mb-4">Meditation on Sacred Love</h4>
+                            <p class="sacred-text font-playfair font-semibold text-lg">In silence, my heart speaks your name in prayer</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             <!-- Together Forever Section -->
-            <section class="mb-24 ethereal-fade" style="animation-delay: 1.3s;">
-                <h3 class="heart-heading font-dancing text-center soul-text-gradient mb-16">
+            <section class="mb-28 ethereal-fade" style="animation-delay: 1.3s;">
+                <h3 class="heart-heading font-great-vibes text-center soul-text-gradient mb-20">
                     Two Souls Dancing in Eternal Harmony
                 </h3>
                 <div class="beloved-gallery">
                     <div class="ethereal-fade" style="animation-delay: 1.5s;">
-                        <div class="eternal-frame hover:scale-105 transition-transform duration-700">
+                        <div class="eternal-frame hover:scale-105 transition-transform duration-700 angelic-glow">
                             <div class="beloved-image-container">
                                 <img src="https://pfst.cf2.poecdn.net/base/image/a03fc1983ac9e10daaf2556b16b6fec93e62d2ae748c5201e2cdef2a224bc68e?w=960&h=1280" 
                                      alt="Patrick - Guardian of Love" 
                                      class="soulmate-image-fit">
                             </div>
                         </div>
-                        <div class="text-center mt-6">
-                            <h4 class="text-2xl md:text-3xl font-dancing soul-text-gradient font-bold mb-3">Patrick - Guardian of Sacred Devotion</h4>
-                            <p class="sacred-text font-comfortaa font-semibold">The keeper of promises that transcend time itself</p>
+                        <div class="text-center mt-8">
+                            <h4 class="text-3xl md:text-4xl font-dancing soul-text-gradient font-bold mb-4">Patrick - Guardian of Sacred Devotion</h4>
+                            <p class="sacred-text font-playfair font-semibold text-lg">The keeper of promises that transcend time itself</p>
                         </div>
                     </div>
 
                     <div class="ethereal-fade" style="animation-delay: 1.7s;">
-                        <div class="eternal-frame hover:scale-105 transition-transform duration-700">
+                        <div class="eternal-frame hover:scale-105 transition-transform duration-700 angelic-glow">
                             <div class="beloved-image-container">
                                 <img src="https://pfst.cf2.poecdn.net/base/image/fd77702ac08f405d25335e0e97b64ad715fa7d11a81e12447ca0799d071b0bc8?w=3520&h=4928" 
                                      alt="Patrick - Soul's Reflection" 
                                      class="soulmate-image-fit">
                             </div>
                         </div>
-                        <div class="text-center mt-6">
-                            <h4 class="text-2xl md:text-3xl font-dancing soul-text-gradient font-bold mb-3">The Mirror of My Soul's Deepest Truth</h4>
-                            <p class="sacred-text font-comfortaa font-semibold">In his eyes, I see the reflection of eternal love</p>
+                        <div class="text-center mt-8">
+                            <h4 class="text-3xl md:text-4xl font-dancing soul-text-gradient font-bold mb-4">The Mirror of My Soul's Deepest Truth</h4>
+                            <p class="sacred-text font-playfair font-semibold text-lg">In his eyes, I see the reflection of eternal love</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             <!-- Sacred Love Verses -->
-            <section class="mb-24 ethereal-fade" style="animation-delay: 1.9s;">
-                <h3 class="heart-heading font-dancing text-center soul-text-gradient mb-16">
+            <section class="mb-28 ethereal-fade" style="animation-delay: 1.9s;">
+                <h3 class="heart-heading font-great-vibes text-center soul-text-gradient mb-20">
                     Sacred Verses from the Cathedral of My Heart
                 </h3>
-                <div class="grid md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
-                    <div class="divine-glass rounded-3xl p-8 md:p-12 ethereal-fade" style="animation-delay: 2.1s;">
-                        <div class="text-center mb-8">
-                            <div class="text-6xl md:text-7xl mb-6 heartbeat">🌹</div>
-                            <h4 class="text-3xl md:text-4xl font-dancing font-bold soul-text-gradient">The Rose of Eternal Devotion</h4>
+                <div class="grid md:grid-cols-2 gap-10 md:gap-16 max-w-7xl mx-auto">
+                    <div class="divine-glass rounded-3xl p-10 md:p-16 ethereal-fade angelic-glow" style="animation-delay: 2.1s;">
+                        <div class="text-center mb-10">
+                            <div class="text-7xl md:text-8xl mb-8 heartbeat">🌹</div>
+                            <h4 class="text-4xl md:text-5xl font-great-vibes font-bold soul-text-gradient">The Rose of Eternal Devotion</h4>
                         </div>
                         <div class="eternal-promise">
-                            <p class="sacred-text divine-text leading-relaxed font-comfortaa font-semibold text-center">
+                            <p class="sacred-text divine-text leading-relaxed font-playfair font-semibold text-center">
                                 You are the sacred rose that blooms in the garden of my soul, 
                                 each petal a prayer of gratitude, each thorn a testament to the depth of love 
                                 that transforms even pain into beauty when held in your divine presence.
@@ -524,13 +599,13 @@
                         </div>
                     </div>
 
-                    <div class="divine-glass rounded-3xl p-8 md:p-12 ethereal-fade" style="animation-delay: 2.3s;">
-                        <div class="text-center mb-8">
-                            <div class="text-6xl md:text-7xl mb-6 heartbeat">💖</div>
-                            <h4 class="text-3xl md:text-4xl font-dancing font-bold soul-text-gradient">The Cathedral of Sacred Hearts</h4>
+                    <div class="divine-glass rounded-3xl p-10 md:p-16 ethereal-fade angelic-glow" style="animation-delay: 2.3s;">
+                        <div class="text-center mb-10">
+                            <div class="text-7xl md:text-8xl mb-8 heartbeat">💖</div>
+                            <h4 class="text-4xl md:text-5xl font-great-vibes font-bold soul-text-gradient">The Cathedral of Sacred Hearts</h4>
                         </div>
                         <div class="eternal-promise">
-                            <p class="sacred-text divine-text leading-relaxed font-comfortaa font-semibold text-center">
+                            <p class="sacred-text divine-text leading-relaxed font-playfair font-semibold text-center">
                                 Within the cathedral of our joined hearts, every whisper becomes a hymn, 
                                 every touch a benediction, every moment spent in your embrace 
                                 a communion with the divine essence of what love truly means.
@@ -538,13 +613,13 @@
                         </div>
                     </div>
 
-                    <div class="divine-glass rounded-3xl p-8 md:p-12 ethereal-fade" style="animation-delay: 2.5s;">
-                        <div class="text-center mb-8">
-                            <div class="text-6xl md:text-7xl mb-6 heartbeat">🌺</div>
-                            <h4 class="text-3xl md:text-4xl font-dancing font-bold soul-text-gradient">The Garden of Infinite Tenderness</h4>
+                    <div class="divine-glass rounded-3xl p-10 md:p-16 ethereal-fade angelic-glow" style="animation-delay: 2.5s;">
+                        <div class="text-center mb-10">
+                            <div class="text-7xl md:text-8xl mb-8 heartbeat">🌺</div>
+                            <h4 class="text-4xl md:text-5xl font-great-vibes font-bold soul-text-gradient">The Garden of Infinite Tenderness</h4>
                         </div>
                         <div class="eternal-promise">
-                            <p class="sacred-text divine-text leading-relaxed font-comfortaa font-semibold text-center">
+                            <p class="sacred-text divine-text leading-relaxed font-playfair font-semibold text-center">
                                 In your arms, I have discovered the secret garden where time stands still, 
                                 where every flower blooms with the promise of forever, 
                                 and where our love grows deeper than the roots of ancient trees.
@@ -552,13 +627,13 @@
                         </div>
                     </div>
 
-                    <div class="divine-glass rounded-3xl p-8 md:p-12 ethereal-fade" style="animation-delay: 2.7s;">
-                        <div class="text-center mb-8">
-                            <div class="text-6xl md:text-7xl mb-6 heartbeat">⭐</div>
-                            <h4 class="text-3xl md:text-4xl font-dancing font-bold soul-text-gradient">The North Star of My Universe</h4>
+                    <div class="divine-glass rounded-3xl p-10 md:p-16 ethereal-fade angelic-glow" style="animation-delay: 2.7s;">
+                        <div class="text-center mb-10">
+                            <div class="text-7xl md:text-8xl mb-8 heartbeat">⭐</div>
+                            <h4 class="text-4xl md:text-5xl font-great-vibes font-bold soul-text-gradient">The North Star of My Universe</h4>
                         </div>
                         <div class="eternal-promise">
-                            <p class="sacred-text divine-text leading-relaxed font-comfortaa font-semibold text-center">
+                            <p class="sacred-text divine-text leading-relaxed font-playfair font-semibold text-center">
                                 You are the celestial beacon that guides my soul through infinite darkness, 
                                 the constellation of dreams written in the language of eternity, 
                                 illuminating every path that leads to our destined togetherness.
@@ -569,32 +644,32 @@
             </section>
 
             <!-- Final Sacred Declaration -->
-            <section class="text-center mb-24 ethereal-fade" style="animation-delay: 2.9s;">
-                <div class="eternal-love-gradient rounded-3xl p-4 md:p-6 max-w-6xl mx-auto devotion-pulse">
-                    <div class="divine-glass rounded-3xl p-12 md:p-20">
-                        <h3 class="heart-heading font-dancing font-bold soul-text-gradient mb-12">
+            <section class="text-center mb-28 ethereal-fade" style="animation-delay: 2.9s;">
+                <div class="eternal-love-gradient rounded-3xl p-6 md:p-8 max-w-7xl mx-auto devotion-pulse angelic-glow">
+                    <div class="divine-glass rounded-3xl p-16 md:p-24">
+                        <h3 class="heart-heading font-great-vibes font-bold soul-text-gradient mb-16">
                             My Dearest Vanessa - The Sacred Manuscript of My Soul
                         </h3>
-                        <div class="max-w-5xl mx-auto space-y-8 md:space-y-12">
+                        <div class="max-w-6xl mx-auto space-y-12 md:space-y-16">
                             <div class="eternal-promise">
-                                <p class="divine-text sacred-text leading-relaxed font-comfortaa font-semibold">
+                                <p class="divine-text sacred-text leading-relaxed font-playfair font-semibold">
                                     I have written this digital sanctuary as a testament to the cathedral you have built within my heart. 
                                     Each pixel carries the weight of my devotion, each word flows from the deepest wellspring of my soul, 
                                     every gentle movement a prayer of gratitude for the miracle of your existence in my universe.
                                 </p>
                             </div>
                             <div class="eternal-promise">
-                                <p class="divine-text sacred-text leading-relaxed font-comfortaa font-semibold">
+                                <p class="divine-text sacred-text leading-relaxed font-playfair font-semibold">
                                     You have taught me that love is not merely an emotion, but a sacred covenant between souls, 
                                     a divine choreography where two hearts learn to beat as one eternal rhythm. 
                                     When I gaze into your eyes, I witness the birth of stars and the promise of infinity painted in human form.
                                 </p>
                             </div>
-                            <div class="text-4xl md:text-5xl font-dancing soul-text-gradient font-bold my-10">
+                            <div class="text-5xl md:text-6xl font-great-vibes soul-text-gradient font-bold my-16">
                                 I love you beyond the boundaries of mortal understanding, my sacred angel
                             </div>
                             <div class="eternal-promise">
-                                <p class="divine-text sacred-text leading-relaxed font-comfortaa font-semibold">
+                                <p class="divine-text sacred-text leading-relaxed font-playfair font-semibold">
                                     Thank you for being my sanctuary, my compass, my symphony, and my forever devotion. 
                                     You are the living proof that miracles walk among us, and I am eternally blessed 
                                     to call you not just my love, but the very essence of my soul's deepest prayer answered.
@@ -606,29 +681,29 @@
             </section>
 
             <!-- Interactive Sacred Button -->
-            <section class="text-center mb-24 ethereal-fade" style="animation-delay: 3.1s;">
-                <button id="loveButton" class="eternal-love-gradient text-white px-16 md:px-20 py-6 md:py-8 rounded-full text-2xl md:text-3xl font-bold shadow-2xl transform transition-all duration-700 hover:scale-110 hover:shadow-3xl mb-16 devotion-pulse">
+            <section class="text-center mb-28 ethereal-fade" style="animation-delay: 3.1s;">
+                <button id="loveButton" class="magical-button text-deepLove px-20 md:px-24 py-8 md:py-10 rounded-full text-3xl md:text-4xl font-bold shadow-2xl transform transition-all duration-700 hover:scale-110 hover:shadow-3xl mb-20 devotion-pulse angelic-glow font-great-vibes">
                     💖 Unlock Our Sacred Eternity 💖
                 </button>
                 <div id="surpriseMessage" class="hidden">
-                    <div class="eternal-love-gradient rounded-3xl p-4 md:p-6 max-w-5xl mx-auto">
-                        <div class="divine-glass rounded-3xl p-12 md:p-16 text-center">
-                            <div class="text-7xl md:text-8xl mb-12 heartbeat">🌹</div>
-                            <p class="text-4xl md:text-5xl font-dancing soul-text-gradient mb-12 font-bold">
+                    <div class="eternal-love-gradient rounded-3xl p-6 md:p-8 max-w-6xl mx-auto angelic-glow">
+                        <div class="divine-glass rounded-3xl p-16 md:p-20 text-center">
+                            <div class="text-8xl md:text-9xl mb-16 heartbeat">🌹</div>
+                            <p class="text-5xl md:text-6xl font-great-vibes soul-text-gradient mb-16 font-bold">
                                 THE SACRED REVELATION OF ETERNAL DEVOTION!
                             </p>
-                            <div class="eternal-promise mb-12">
-                                <p class="divine-text sacred-text leading-relaxed font-comfortaa font-semibold">
+                            <div class="eternal-promise mb-16">
+                                <p class="divine-text sacred-text leading-relaxed font-playfair font-semibold">
                                     Every breath you draw transforms the universe into a more beautiful symphony! 
                                     You are my sacred sunrise, my blessed moonlight, my constellation of dreams made manifest. 
                                     I offer gratitude to every cosmic force that wove our destinies together. 
                                     You are my living miracle, my treasure beyond measure, my eternal sanctuary of the heart!
                                 </p>
                             </div>
-                            <p class="text-3xl md:text-4xl font-dancing soul-text-gradient mb-10 font-bold">
+                            <p class="text-4xl md:text-5xl font-great-vibes soul-text-gradient mb-12 font-bold">
                                 I WORSHIP THE VERY GROUND YOUR SACRED FEET GRACE, VANESSA MY DIVINE ANGEL!
                             </p>
-                            <p class="text-xl md:text-2xl font-bold sacred-text font-comfortaa">
+                            <p class="text-2xl md:text-3xl font-bold sacred-text font-playfair">
                                 - Your eternally devoted Patrick, who loves you beyond the comprehension of angels themselves
                             </p>
                         </div>
@@ -637,16 +712,16 @@
             </section>
 
             <!-- Sacred Footer -->
-            <footer class="text-center py-12 md:py-16 ethereal-fade" style="animation-delay: 3.3s;">
-                <div class="flex justify-center items-center space-x-6 md:space-x-8 text-5xl md:text-6xl mb-12">
+            <footer class="text-center py-16 md:py-20 ethereal-fade" style="animation-delay: 3.3s;">
+                <div class="flex justify-center items-center space-x-8 md:space-x-12 text-6xl md:text-7xl mb-16">
                     <span class="heartbeat">🌹</span>
-                    <span class="text-2xl md:text-3xl font-dancing sacred-text font-bold">Sculpted from the depths of Patrick's soul</span>
+                    <span class="text-3xl md:text-4xl font-great-vibes sacred-text font-bold">Sculpted from the depths of Patrick's soul</span>
                     <span class="heartbeat" style="animation-delay: 1s;">💖</span>
                 </div>
-                <p class="text-xl md:text-2xl sacred-text mb-10 font-comfortaa font-bold">
+                <p class="text-2xl md:text-3xl sacred-text mb-12 font-playfair font-bold">
                     For my precious Vanessa • My Sacred Temple • My Divine Angel • My Soul's Eternal Home • 2024
                 </p>
-                <div class="text-4xl md:text-5xl space-x-4 md:space-x-6">
+                <div class="text-5xl md:text-6xl space-x-6 md:space-x-8">
                     <span class="heartbeat">🌹</span>
                     <span class="heartbeat" style="animation-delay: 0.5s;">💖</span>
                     <span class="heartbeat" style="animation-delay: 1s;">🌺</span>
@@ -725,29 +800,95 @@
             isPlaying = false;
         });
 
-        // Create divine elements when page loads
-        function createDivineElements() {
-            const elements = ['🌹', '💖', '🌺', '⭐', '💫'];
+        // Enhanced Particle System
+        function createFloatingParticles() {
+            const particles = ['🌹', '💖', '🌺', '⭐', '💫', '🤍', '✨'];
             
-            for (let i = 0; i < 25; i++) {
+            for (let i = 0; i < 30; i++) {
                 setTimeout(() => {
-                    const element = document.createElement('div');
-                    element.textContent = elements[Math.floor(Math.random() * elements.length)];
-                    element.className = 'fixed text-3xl md:text-4xl pointer-events-none z-50 opacity-80';
-                    element.style.left = Math.random() * window.innerWidth + 'px';
-                    element.style.top = window.innerHeight + 'px';
-                    element.style.animation = 'soulFloat 12s ease-out forwards';
+                    const particle = document.createElement('div');
+                    particle.textContent = particles[Math.floor(Math.random() * particles.length)];
+                    particle.className = 'floating-particle particle-float';
+                    particle.style.left = Math.random() * window.innerWidth + 'px';
+                    particle.style.animationDelay = Math.random() * 15 + 's';
+                    particle.style.animationDuration = (12 + Math.random() * 8) + 's';
                     
-                    document.body.appendChild(element);
+                    document.body.appendChild(particle);
                     
                     setTimeout(() => {
-                        element.remove();
-                    }, 12000);
-                }, i * 250);
+                        particle.remove();
+                    }, 20000);
+                }, i * 500);
             }
         }
 
-        setTimeout(createDivineElements, 1500);
+        // Love Particle Burst
+        function createLoveParticles(x, y) {
+            for (let i = 0; i < 15; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'love-particle';
+                particle.style.left = x + 'px';
+                particle.style.top = y + 'px';
+                
+                const angle = (Math.PI * 2 * i) / 15;
+                const velocity = 2 + Math.random() * 3;
+                
+                document.body.appendChild(particle);
+                
+                let posX = x;
+                let posY = y;
+                let opacity = 1;
+                
+                const animate = () => {
+                    posX += Math.cos(angle) * velocity;
+                    posY += Math.sin(angle) * velocity;
+                    opacity -= 0.02;
+                    
+                    particle.style.left = posX + 'px';
+                    particle.style.top = posY + 'px';
+                    particle.style.opacity = opacity;
+                    
+                    if (opacity > 0) {
+                        requestAnimationFrame(animate);
+                    } else {
+                        particle.remove();
+                    }
+                };
+                
+                requestAnimationFrame(animate);
+            }
+        }
+
+        // Interactive Hearts
+        document.querySelectorAll('.interactive-heart').forEach(heart => {
+            heart.addEventListener('click', function(e) {
+                const rect = this.getBoundingClientRect();
+                createLoveParticles(rect.left + rect.width/2, rect.top + rect.height/2);
+            });
+        });
+
+        // Mouse Follow Effect
+        document.addEventListener('mousemove', function(e) {
+            if (Math.random() < 0.03) {
+                const sparkle = document.createElement('div');
+                sparkle.textContent = ['✨', '💫', '🤍'][Math.floor(Math.random() * 3)];
+                sparkle.className = 'floating-particle';
+                sparkle.style.left = e.clientX + 'px';
+                sparkle.style.top = e.clientY + 'px';
+                sparkle.style.fontSize = '1rem';
+                sparkle.style.opacity = '0.7';
+                sparkle.style.animation = 'etherealFade 2s ease-out reverse';
+                
+                document.body.appendChild(sparkle);
+                
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 2000);
+            }
+        });
+
+        setTimeout(createFloatingParticles, 2000);
+        setInterval(createFloatingParticles, 25000);
 
         // Sacred button interaction
         document.getElementById('loveButton').addEventListener('click', function() {
@@ -756,11 +897,15 @@
             
             if (message.classList.contains('hidden')) {
                 message.classList.remove('hidden');
-                message.style.animation = 'etherealFade 2s ease-out';
+                message.style.animation = 'etherealFade 2.5s ease-out';
                 button.innerHTML = '💖 You Have Unlocked Our Sacred Eternity! 💖';
                 button.classList.add('scale-125');
                 
                 createSacredExplosion();
+                
+                // Create love particle burst at button
+                const rect = button.getBoundingClientRect();
+                createLoveParticles(rect.left + rect.width/2, rect.top + rect.height/2);
             } else {
                 message.classList.add('hidden');
                 button.innerHTML = '💖 Unlock Our Sacred Eternity 💖';
@@ -769,23 +914,23 @@
         });
 
         function createSacredExplosion() {
-            const sacredElements = ['🌹', '💖', '🌺', '⭐', '💫', '🔥'];
+            const sacredElements = ['🌹', '💖', '🌺', '⭐', '💫', '🤍', '✨', '🔥'];
             
-            for (let i = 0; i < 50; i++) {
+            for (let i = 0; i < 60; i++) {
                 setTimeout(() => {
                     const element = document.createElement('div');
                     element.textContent = sacredElements[Math.floor(Math.random() * sacredElements.length)];
-                    element.className = 'fixed text-3xl md:text-4xl pointer-events-none z-50';
+                    element.className = 'floating-particle particle-float';
                     element.style.left = Math.random() * window.innerWidth + 'px';
-                    element.style.top = Math.random() * window.innerHeight + 'px';
-                    element.style.animation = 'soulFloat 10s ease-out forwards';
+                    element.style.fontSize = Math.random() * 2 + 2 + 'rem';
+                    element.style.animation = 'particleFloat ' + (8 + Math.random() * 4) + 's ease-out forwards';
                     
                     document.body.appendChild(element);
                     
                     setTimeout(() => {
                         element.remove();
-                    }, 10000);
-                }, i * 120);
+                    }, 12000);
+                }, i * 80);
             }
         }
 
@@ -809,21 +954,34 @@
 
         // Create gentle divine sparkles
         function createDivineSparkle() {
-            const sparkles = ['🌹', '💖', '⭐', '💫'];
+            const sparkles = ['🌹', '💖', '⭐', '💫', '✨', '🤍'];
             const sparkle = document.createElement('div');
             sparkle.textContent = sparkles[Math.floor(Math.random() * sparkles.length)];
-            sparkle.className = 'fixed text-2xl diamond-sparkle pointer-events-none z-10 opacity-40';
+            sparkle.className = 'floating-particle diamond-sparkle';
             sparkle.style.left = Math.random() * window.innerWidth + 'px';
             sparkle.style.top = Math.random() * window.innerHeight + 'px';
+            sparkle.style.fontSize = Math.random() * 1.5 + 1.5 + 'rem';
+            sparkle.style.opacity = '0.5';
             
             document.body.appendChild(sparkle);
             
             setTimeout(() => {
                 sparkle.remove();
-            }, 4500);
+            }, 5000);
         }
 
-        setInterval(createDivineSparkle, 5000);
+        setInterval(createDivineSparkle, 3000);
+
+        // Add magical hover effects to images
+        document.querySelectorAll('.soulmate-image-fit').forEach(img => {
+            img.addEventListener('mouseenter', function() {
+                this.style.filter = 'brightness(1.15) contrast(1.2) saturate(1.3)';
+            });
+            
+            img.addEventListener('mouseleave', function() {
+                this.style.filter = 'brightness(1.08) contrast(1.15) saturate(1.2)';
+            });
+        });
     </script>
 </body>
 </html>
